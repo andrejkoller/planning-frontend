@@ -1,42 +1,231 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="light"] {
+  --primary: #61c0ff;
+  --primary-hover: #4da6e6;
+  --primary-active: #3990cc;
+  --background-primary: #ffffff;
+  --background-secondary: #f0f0f0;
+  --foreground: #000000;
+  --card: #ffffff;
+  --border: #e0e0e0;
+  --text-active: #000000;
+  --text-inactive: #666666;
+  --card-background: #f9f9f9;
+  --card-background-hover: #f0f0f0;
+  --card-border: #e0e0e0;
+  --card-border-hover: #d0d0d0;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: rgba(0, 0, 0, 0.15);
+  --button-background: #f9f9f9;
+  --button-background-hover: #f0f0f0;
+  --button-text: #000000;
+  --button-text-hover: #000000;
+  --button-border: #e0e0e0;
+  --button-border-hover: #d0d0d0;
+  --button-shadow: rgba(0, 0, 0, 0.1);
+  --button-shadow-hover: rgba(0, 0, 0, 0.15);
+  --input-background: #f9f9f9;
+  --input-border: #e0e0e0;
+  --input-text: #000000;
+  --input-placeholder: #999999;
+  --input-focus-border: #d0d0d0;
+  --input-focus-shadow: rgba(0, 0, 0, 0.15);
+  --input-focus-background: #f0f0f0;
+  --input-focus-text: #000000;
+  --input-focus-placeholder: #999999;
+  --input-disabled-background: #ffffff;
+  --input-disabled-border: #e0e0e0;
+  --input-disabled-text: #999999;
+  --input-disabled-placeholder: #999999;
+  --input-disabled-shadow: rgba(0, 0, 0, 0.05);
+  --input-disabled-focus-border: #e0e0e0;
+  --input-disabled-focus-shadow: rgba(0, 0, 0, 0.05);
+  --input-disabled-focus-background: #ffffff;
+  --input-disabled-focus-text: #999999;
+  --input-disabled-focus-placeholder: #999999;
+  --input-hover-background: #f0f0f0;
+  --input-hover-border: #d0d0d0;
+  --input-hover-text: #000000;
+  --input-hover-placeholder: #999999;
+  --input-hover-shadow: rgba(0, 0, 0, 0.1);
+  --input-hover-focus-border: #d0d0d0;
+  --input-hover-focus-shadow: rgba(0, 0, 0, 0.15);
+  --input-hover-focus-background: #f0f0f0;
+  --input-hover-focus-text: #000000;
+  --input-hover-focus-placeholder: #999999;
+  --input-active-background: #f0f0f0;
+  --input-active-border: #d0d0d0;
+  --input-active-text: #000000;
+  --input-active-placeholder: #999999;
+  --input-active-shadow: rgba(0, 0, 0, 0.15);
+  --input-active-focus-border: #d0d0d0;
+  --input-active-focus-shadow: rgba(0, 0, 0, 0.2);
+  --input-active-focus-background: #f0f0f0;
+  --input-active-focus-text: #000000;
+  --input-active-focus-placeholder: #999999;
+  --input-error-background: #f0f0f0;
+  --input-error-border: #ff4d4d;
+  --input-error-text: #000000;
+  --input-error-placeholder: #ffb3b3;
+  --input-error-shadow: rgba(0, 0, 0, 0.15);
+  --input-error-focus-border: #ff4d4d;
+  --input-error-focus-shadow: rgba(0, 0, 0, 0.2);
+  --input-error-focus-background: #f0f0f0;
+  --input-error-focus-text: #000000;
+  --input-error-focus-placeholder: #ffb3b3;
+  --input-success-background: #f0f0f0;
+  --input-success-border: #4caf50;
+  --input-success-text: #000000;
+  --input-success-placeholder: #b2f2bb;
+  --input-success-shadow: rgba(0, 0, 0, 0.15);
+  --input-success-focus-border: #4caf50;
+  --input-success-focus-shadow: rgba(0, 0, 0, 0.2);
+  --input-success-focus-background: #f0f0f0;
+  --input-success-focus-text: #000000;
+  --input-success-focus-placeholder: #b2f2bb;
+  --input-warning-background: #f0f0f0;
+  --input-warning-border: #ff9800;
+  --input-warning-text: #000000;
+  --input-warning-placeholder: #ffe0b2;
+  --input-warning-shadow: rgba(0, 0, 0, 0.15);
+  --input-warning-focus-border: #ff9800;
+  --input-warning-focus-shadow: rgba(0, 0, 0, 0.2);
+  --input-warning-focus-background: #f0f0f0;
+  --input-warning-focus-text: #000000;
+  --input-warning-focus-placeholder: #ffe0b2;
+  --input-info-background: #f0f0f0;
+  --input-info-border: #2196f3;
+  --input-info-text: #000000;
+  --input-info-placeholder: #bbdefb;
+  --input-info-shadow: rgba(0, 0, 0, 0.15);
+  --input-info-focus-border: #2196f3;
+  --input-info-focus-shadow: rgba(0, 0, 0, 0.2);
+  --input-info-focus-background: #f0f0f0;
+  --input-info-focus-text: #000000;
+  --input-info-focus-placeholder: #bbdefb;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+[data-theme="dark"] {
+  --primary: #61c0ff;
+  --primary-hover: #4da6e6;
+  --primary-active: #3990cc;
+  --background-primary: #111111;
+  --background-secondary: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --border: #333333;
+  --text-active: #ffffff;
+  --text-inactive: #b3b3b3;
+  --card-background: #222222;
+  --card-background-hover: #2a2a2a;
+  --card-border: #333333;
+  --card-border-hover: #444444;
+  --card-shadow: rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: rgba(0, 0, 0, 0.3);
+  --button-background: #222222;
+  --button-background-hover: #2a2a2a;
+  --button-text: #ffffff;
+  --button-text-hover: #ffffff;
+  --button-border: #333333;
+  --button-border-hover: #444444;
+  --button-shadow: rgba(0, 0, 0, 0.2);
+  --button-shadow-hover: rgba(0, 0, 0, 0.3);
+  --input-background: #222222;
+  --input-border: #333333;
+  --input-text: #ffffff;
+  --input-placeholder: #b3b3b3;
+  --input-focus-border: #444444;
+  --input-focus-shadow: rgba(0, 0, 0, 0.3);
+  --input-focus-background: #2a2a2a;
+  --input-focus-text: #ffffff;
+  --input-focus-placeholder: #b3b3b3;
+  --input-disabled-background: #111111;
+  --input-disabled-border: #333333;
+  --input-disabled-text: #b3b3b3;
+  --input-disabled-placeholder: #b3b3b3;
+  --input-disabled-shadow: rgba(0, 0, 0, 0.1);
+  --input-disabled-focus-border: #333333;
+  --input-disabled-focus-shadow: rgba(0, 0, 0, 0.1);
+  --input-disabled-focus-background: #111111;
+  --input-disabled-focus-text: #b3b3b3;
+  --input-disabled-focus-placeholder: #b3b3b3;
+  --input-hover-background: #2a2a2a;
+  --input-hover-border: #444444;
+  --input-hover-text: #ffffff;
+  --input-hover-placeholder: #b3b3b3;
+  --input-hover-shadow: rgba(0, 0, 0, 0.2);
+  --input-hover-focus-border: #444444;
+  --input-hover-focus-shadow: rgba(0, 0, 0, 0.3);
+  --input-hover-focus-background: #2a2a2a;
+  --input-hover-focus-text: #ffffff;
+  --input-hover-focus-placeholder: #b3b3b3;
+  --input-active-background: #2a2a2a;
+  --input-active-border: #444444;
+  --input-active-text: #ffffff;
+  --input-active-placeholder: #b3b3b3;
+  --input-active-shadow: rgba(0, 0, 0, 0.3);
+  --input-active-focus-border: #444444;
+  --input-active-focus-shadow: rgba(0, 0, 0, 0.4);
+  --input-active-focus-background: #2a2a2a;
+  --input-active-focus-text: #ffffff;
+  --input-active-focus-placeholder: #b3b3b3;
+  --input-error-background: #2a2a2a;
+  --input-error-border: #ff4d4d;
+  --input-error-text: #ffffff;
+  --input-error-placeholder: #ffb3b3;
+  --input-error-shadow: rgba(0, 0, 0, 0.3);
+  --input-error-focus-border: #ff4d4d;
+  --input-error-focus-shadow: rgba(0, 0, 0, 0.4);
+  --input-error-focus-background: #2a2a2a;
+  --input-error-focus-text: #ffffff;
+  --input-error-focus-placeholder: #ffb3b3;
+  --input-success-background: #2a2a2a;
+  --input-success-border: #4caf50;
+  --input-success-text: #ffffff;
+  --input-success-placeholder: #b2f2bb;
+  --input-success-shadow: rgba(0, 0, 0, 0.3);
+  --input-success-focus-border: #4caf50;
+  --input-success-focus-shadow: rgba(0, 0, 0, 0.4);
+  --input-success-focus-background: #2a2a2a;
+  --input-success-focus-text: #ffffff;
+  --input-success-focus-placeholder: #b2f2bb;
+  --input-warning-background: #2a2a2a;
+  --input-warning-border: #ff9800;
+  --input-warning-text: #ffffff;
+  --input-warning-placeholder: #ffe0b2;
+  --input-warning-shadow: rgba(0, 0, 0, 0.3);
+  --input-warning-focus-border: #ff9800;
+  --input-warning-focus-shadow: rgba(0, 0, 0, 0.4);
+  --input-warning-focus-background: #2a2a2a;
+  --input-warning-focus-text: #ffffff;
+  --input-warning-focus-placeholder: #ffe0b2;
+  --input-info-background: #2a2a2a;
+  --input-info-border: #2196f3;
+  --input-info-text: #ffffff;
+  --input-info-placeholder: #bbdefb;
+  --input-info-shadow: rgba(0, 0, 0, 0.3);
+  --input-info-focus-border: #2196f3;
+  --input-info-focus-shadow: rgba(0, 0, 0, 0.4);
+  --input-info-focus-background: #2a2a2a;
+  --input-info-focus-text: #ffffff;
+  --input-info-focus-placeholder: #bbdefb;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background-primary);
+  font-family: var(--font-inter), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+  padding: 0;
+  box-sizing: border-box;
 }

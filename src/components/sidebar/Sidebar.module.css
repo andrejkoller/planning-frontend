@@ -1,0 +1,148 @@
+.sidebar {
+  width: 96px;
+  height: 100vh;
+  background-color: var(--background-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.logo-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.logo a {
+  color: var(--foreground);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  color: var(--foreground);
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-item a:hover {
+  background-color: var(--button-background-hover);
+}
+
+.nav-item a svg {
+  width: 28px;
+  height: 28px;
+}
+
+.help-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-section a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  color: var(--foreground);
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.help-section a:hover {
+  background-color: var(--button-background-hover);
+}
+
+.help-section a svg {
+  width: 28px;
+  height: 28px;
+}
+
+.profile-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  color: var(--foreground);
+  border: 4px solid var(--foreground);
+  background-color: var(--primary);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.profile h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
