@@ -1,14 +1,12 @@
-.sidebar {
+.sidebar-collapsed {
   width: 96px;
-  height: 100vh;
-  background-color: var(--background-primary);
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: calc(100% - 5.5rem);
+  background-color: var(--background-secondary);
   z-index: 1000;
+  border-radius: 8px;
 }
 
-.sidebar-container {
+.sidebar-collapsed .sidebar-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,7 +14,7 @@
   align-items: center;
 }
 
-.sidebar-content {
+.sidebar-collapsed .sidebar-content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,7 +24,7 @@
   gap: 1.5rem;
 }
 
-.logo-section {
+.sidebar-collapsed .sidebar-control {
   width: 100%;
   display: flex;
   align-items: center;
@@ -34,21 +32,14 @@
   margin-top: 24px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0;
+.sidebar-collapsed .sidebar-control svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.logo a {
-  color: var(--foreground);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-section {
+.sidebar-collapsed .nav-section {
   width: 100%;
   height: 100%;
   display: flex;
@@ -56,7 +47,7 @@
   align-items: center;
 }
 
-.nav-list {
+.sidebar-collapsed .nav-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +59,7 @@
   width: 100%;
 }
 
-.nav-item {
+.sidebar-collapsed .nav-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +67,7 @@
   cursor: pointer;
 }
 
-.nav-item a {
+.sidebar-collapsed .nav-item a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,23 +77,23 @@
   border-radius: 8px;
 }
 
-.nav-item a:hover {
+.sidebar-collapsed .nav-item a:hover {
   background-color: var(--button-background-hover);
 }
 
-.nav-item a svg {
-  width: 28px;
-  height: 28px;
+.sidebar-collapsed .nav-item a svg {
+  width: 24px;
+  height: 24px;
 }
 
-.help-section {
+.sidebar-collapsed .help-section {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.help-section a {
+.sidebar-collapsed .help-section a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,42 +103,137 @@
   border-radius: 8px;
 }
 
-.help-section a:hover {
+.sidebar-collapsed .help-section a:hover {
   background-color: var(--button-background-hover);
 }
 
-.help-section a svg {
+.sidebar-collapsed .help-section a svg {
   width: 28px;
   height: 28px;
 }
 
-.profile-section {
+.sidebar-expanded {
+  width: 320px;
+  height: calc(100% - 5.5rem);
+  background-color: var(--background-secondary);
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.sidebar-expanded .sidebar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.sidebar-expanded .sidebar-content {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.sidebar-expanded .sidebar-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 24px;
+  gap: 16px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.toggle-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  gap: 16px;
+  cursor: pointer;
 }
 
-.profile-section a {
+.sidebar-expanded .sidebar-control svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-expanded .nav-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-expanded .nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar-expanded .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar-expanded .nav-item a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 12px 14px;
   color: var(--foreground);
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  width: 100%;
   text-decoration: none;
 }
 
-.profile {
-  width: 64px;
-  height: 64px;
+.sidebar-expanded .nav-item a:hover {
+  background-color: var(--button-background-hover);
+}
+
+.sidebar-expanded .nav-item a svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-expanded .help-section {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  background-color: var(--primary);
-  border-radius: 999px;
-  cursor: pointer;
 }
 
-.profile h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0;
+.sidebar-expanded .help-section a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  color: var(--foreground);
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.sidebar-expanded .help-section a:hover {
+  background-color: var(--button-background-hover);
+}
+
+.sidebar-expanded .help-section a svg {
+  width: 28px;
+  height: 28px;
 }

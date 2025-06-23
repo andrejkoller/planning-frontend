@@ -5,15 +5,23 @@ import {
   HomeIcon,
   MessageCircleIcon,
   MusicIcon,
+  SidebarClose,
+  SidebarOpen,
   UsersIcon,
 } from "lucide-react";
 import styles from "./Sidebar.module.css";
 import { Tooltip } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export const Sidebar = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
+
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => !prev);
+  };
 
   const isActive = (path: string) => {
     return pathname === path
@@ -24,16 +32,72 @@ export const Sidebar = () => {
       : {};
   };
 
-  return (
-    <aside className={styles["sidebar"]}>
+  return sidebarOpen ? (
+    <aside className={styles["sidebar-expanded"]}>
       <div className={styles["sidebar-container"]}>
         <div className={styles["sidebar-content"]}>
-          <div className={styles["logo-section"]}>
-            <h1 className={styles["logo"]}>
-              <Link href={"/"} className={styles["logo-link"]}>
-                <span className={styles["logo-text"]}>P</span>
-              </Link>
-            </h1>
+          <div className={styles["sidebar-control"]} onClick={toggleSidebar}>
+            <Tooltip title="Close Sidebar" placement="top">
+              <span className={styles["toggle-button"]}>
+                <SidebarClose className={styles["toggle-icon"]} />
+                <span>Menu</span>
+              </span>
+            </Tooltip>
+          </div>
+          <nav className={styles["nav-section"]}>
+            <ul className={styles["nav-list"]}>
+              <li className={styles["nav-item"]}>
+                <Link href={"/"} style={isActive("/")}>
+                  <HomeIcon className={styles["icon"]} />
+                  <span className={styles["home-text"]}>Overview</span>
+                </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <Link href={"/services"} style={isActive("/services")}>
+                  <BookOpen className={styles["icon"]} />
+                  <span className={styles["services-text"]}>Services</span>
+                </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <Link href={"/messages"} style={isActive("/messages")}>
+                  <MessageCircleIcon className={styles["icon"]} />
+                  <span className={styles["messages-text"]}>Messages</span>
+                </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <a href={"/music"} style={isActive("/music")}>
+                  <MusicIcon className={styles["icon"]} />
+                  <span className={styles["music-text"]}>Music</span>
+                </a>
+              </li>
+              <li className={styles["nav-item"]}>
+                <a href={"/users"} style={isActive("/users")}>
+                  <UsersIcon className={styles["icon"]} />
+                  <span className={styles["users-text"]}>Users</span>
+                </a>
+              </li>
+              <li className={styles["nav-item"]}>
+                <a href={"/help"}>
+                  <HelpCircleIcon className={styles["help-icon"]} />
+                  <span className={styles["help-text"]}>Help</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </aside>
+  ) : (
+    <aside className={styles["sidebar-collapsed"]}>
+      <div className={styles["sidebar-container"]}>
+        <div className={styles["sidebar-content"]}>
+          <div className={styles["sidebar-control"]}>
+            <Tooltip title="Open Sidebar" placement="right">
+              <SidebarOpen
+                className={styles["toggle-icon"]}
+                onClick={toggleSidebar}
+              />
+            </Tooltip>
           </div>
           <nav className={styles["nav-section"]}>
             <ul className={styles["nav-list"]}>
@@ -72,22 +136,15 @@ export const Sidebar = () => {
                   </a>
                 </Tooltip>
               </li>
+              <li className={styles["nav-item"]}>
+                <Tooltip title="Help" placement="right">
+                  <a href={"/help"}>
+                    <HelpCircleIcon className={styles["help-icon"]} />
+                  </a>
+                </Tooltip>
+              </li>
             </ul>
           </nav>
-          <div className={styles["help-section"]}>
-            <Tooltip title="Help" placement="right">
-              <a href={"/help"}>
-                <HelpCircleIcon className={styles["help-icon"]} />
-              </a>
-            </Tooltip>
-          </div>
-          <div className={styles["profile-section"]}>
-            <Link href={"/profile"}>
-              <div className={styles["profile"]}>
-                <h2 className={styles["profile-name"]}>A</h2>
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </aside>

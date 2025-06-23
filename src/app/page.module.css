@@ -1,4 +1,12 @@
-.main {
+.layout-content {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,4 +14,7 @@
   height: 100vh;
   width: calc(100% - 96px);
   margin-left: auto;
+  overflow: auto !important;
+  border-radius: 8px;
+  background-color: var(--background-secondary);
 }

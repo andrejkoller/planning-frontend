@@ -7,8 +7,8 @@
   --primary: #61c0ff;
   --primary-hover: #4da6e6;
   --primary-active: #3990cc;
-  --background-primary: #ffffff;
-  --background-secondary: #f0f0f0;
+  --background-primary: #fafafa;
+  --background-secondary: #ffffff;
   --foreground: #000000;
   --link-active-background: #f0f0f0;
   --card: #ffffff;
@@ -114,8 +114,8 @@
   --primary: #61c0ff;
   --primary-hover: #4da6e6;
   --primary-active: #3990cc;
-  --background-primary: #111111;
-  --background-secondary: #1a1a1a;
+  --background-primary: #0d0d0d;
+  --background-secondary: #111111;
   --foreground: #ffffff;
   --link-active-background: #222222;
   --card: #1a1a1a;
@@ -219,7 +219,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background-secondary);
+  background: var(--background-primary);
   font-family: var(--font-inter), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -230,6 +230,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .css-1usuzwp-MuiButtonBase-root-MuiTab-root {
