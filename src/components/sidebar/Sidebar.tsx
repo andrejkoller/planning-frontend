@@ -19,7 +19,7 @@ export const Sidebar = () => {
     return pathname === path
       ? {
           color: "var(--foreground)",
-          backgroundColor: "var(--card-background)",
+          backgroundColor: "var(--link-active-background)",
         }
       : {};
   };

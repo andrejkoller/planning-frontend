@@ -130,12 +130,12 @@
 }
 
 .profile {
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 20px;
-  color: var(--foreground);
-  border: 4px solid var(--foreground);
+  color: #ffffff;
   background-color: var(--primary);
   border-radius: 999px;
   cursor: pointer;

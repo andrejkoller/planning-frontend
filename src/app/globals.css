@@ -10,6 +10,7 @@
   --background-primary: #ffffff;
   --background-secondary: #f0f0f0;
   --foreground: #000000;
+  --link-active-background: #f0f0f0;
   --card: #ffffff;
   --border: #e0e0e0;
   --text-active: #000000;
@@ -116,6 +117,7 @@
   --background-primary: #111111;
   --background-secondary: #1a1a1a;
   --foreground: #ffffff;
+  --link-active-background: #222222;
   --card: #1a1a1a;
   --border: #333333;
   --text-active: #ffffff;
@@ -217,7 +219,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background-primary);
+  background: var(--background-secondary);
   font-family: var(--font-inter), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
