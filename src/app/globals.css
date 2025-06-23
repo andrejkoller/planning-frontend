@@ -231,3 +231,19 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.css-1usuzwp-MuiButtonBase-root-MuiTab-root {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  color: #ffffff !important;
+}
+
+.css-1usuzwp-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+.css-1qltlow-MuiTabs-indicator {
+  background-color: #ffffff !important;
+}

@@ -129,6 +129,11 @@
   margin-bottom: 24px;
 }
 
+.profile-section a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
 .profile {
   width: 64px;
   height: 64px;

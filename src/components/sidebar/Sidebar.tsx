@@ -39,7 +39,7 @@ export const Sidebar = () => {
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Overview" placement="right">
-                  <Link href={"/overview"} style={isActive("/")}>
+                  <Link href={"/"} style={isActive("/")}>
                     <HomeIcon className={styles["icon"]} />
                   </Link>
                 </Tooltip>
@@ -82,9 +82,11 @@ export const Sidebar = () => {
             </Tooltip>
           </div>
           <div className={styles["profile-section"]}>
-            <div className={styles["profile"]}>
-              <h2 className={styles["profile-name"]}>A</h2>
-            </div>
+            <Link href={"/profile"}>
+              <div className={styles["profile"]}>
+                <h2 className={styles["profile-name"]}>A</h2>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

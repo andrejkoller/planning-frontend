@@ -1,6 +1,7 @@
 "use client";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 import { ThemeProvider } from "@/contexts/theme/ThemeProvider";
+import styles from "./page.module.css";
 
 export default function LayoutClient({
   children,
@@ -10,7 +11,7 @@ export default function LayoutClient({
   return (
     <ThemeProvider>
       <Sidebar />
-      <main>{children}</main>
+      <main className={styles["main"]}>{children}</main>
     </ThemeProvider>
   );
 }
