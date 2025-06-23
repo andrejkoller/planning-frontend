@@ -3,7 +3,7 @@
   height: calc(100% - 5.5rem);
   background-color: var(--background-secondary);
   z-index: 1000;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .sidebar-collapsed .sidebar-container {
@@ -37,6 +37,10 @@
   height: 24px;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+.sidebar-control span {
+  font-size: 16px;
 }
 
 .sidebar-collapsed .nav-section {
@@ -74,7 +78,9 @@
   padding: 12px 14px;
   color: var(--foreground);
   transition: background-color 0.3s ease;
-  border-radius: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .sidebar-collapsed .nav-item a:hover {
@@ -86,38 +92,12 @@
   height: 24px;
 }
 
-.sidebar-collapsed .help-section {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-collapsed .help-section a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 14px;
-  color: var(--foreground);
-  transition: background-color 0.3s ease;
-  border-radius: 8px;
-}
-
-.sidebar-collapsed .help-section a:hover {
-  background-color: var(--button-background-hover);
-}
-
-.sidebar-collapsed .help-section a svg {
-  width: 28px;
-  height: 28px;
-}
-
 .sidebar-expanded {
   width: 320px;
   height: calc(100% - 5.5rem);
   background-color: var(--background-secondary);
   z-index: 1000;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .sidebar-expanded .sidebar-container {
@@ -198,9 +178,10 @@
   padding: 12px 14px;
   color: var(--foreground);
   transition: background-color 0.3s ease;
-  border-radius: 8px;
+  border-radius: 6px;
   width: 100%;
   text-decoration: none;
+  font-size: 16px;
 }
 
 .sidebar-expanded .nav-item a:hover {
@@ -210,30 +191,4 @@
 .sidebar-expanded .nav-item a svg {
   width: 24px;
   height: 24px;
-}
-
-.sidebar-expanded .help-section {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-expanded .help-section a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 14px;
-  color: var(--foreground);
-  transition: background-color 0.3s ease;
-  border-radius: 8px;
-}
-
-.sidebar-expanded .help-section a:hover {
-  background-color: var(--button-background-hover);
-}
-
-.sidebar-expanded .help-section a svg {
-  width: 28px;
-  height: 28px;
 }

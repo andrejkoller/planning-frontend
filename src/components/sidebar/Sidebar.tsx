@@ -1,7 +1,6 @@
 "use client";
 import {
   BookOpen,
-  HelpCircleIcon,
   HomeIcon,
   MessageCircleIcon,
   MusicIcon,
@@ -76,12 +75,6 @@ export const Sidebar = () => {
                   <span className={styles["users-text"]}>Users</span>
                 </a>
               </li>
-              <li className={styles["nav-item"]}>
-                <a href={"/help"}>
-                  <HelpCircleIcon className={styles["help-icon"]} />
-                  <span className={styles["help-text"]}>Help</span>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -133,13 +126,6 @@ export const Sidebar = () => {
                 <Tooltip title="Users" placement="right">
                   <a href={"/users"} style={isActive("/users")}>
                     <UsersIcon className={styles["icon"]} />
-                  </a>
-                </Tooltip>
-              </li>
-              <li className={styles["nav-item"]}>
-                <Tooltip title="Help" placement="right">
-                  <a href={"/help"}>
-                    <HelpCircleIcon className={styles["help-icon"]} />
                   </a>
                 </Tooltip>
               </li>

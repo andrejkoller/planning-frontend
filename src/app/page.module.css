@@ -15,6 +15,6 @@
   width: calc(100% - 96px);
   margin-left: auto;
   overflow: auto !important;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: var(--background-secondary);
 }

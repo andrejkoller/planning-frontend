@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--foreground);
   background-color: var(--primary);
   border-radius: 999px;
   cursor: pointer;
@@ -77,4 +77,19 @@
 
 .profile:hover {
   transform: scale(1.05);
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--foreground);
+  width: 100%;
+}
+
+.menu-link svg {
+  width: 24px;
+  height: 24px;
+  color: var(--foreground);
 }
