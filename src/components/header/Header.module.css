@@ -1,7 +1,8 @@
 .header {
   width: 100%;
-  z-index: 1000;
+  height: 80px;
   transition: min-height 0.3s;
+  z-index: 4;
 }
 
 .header-container {
@@ -10,12 +11,12 @@
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
 }
 
 .header-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
@@ -26,76 +27,16 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 0.5rem;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--foreground-secondary);
-  margin: 0;
-}
-
-.menu-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.menu-section svg {
-  width: 28px;
-  height: 28px;
-  color: var(--foreground-primary);
-  cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
-}
-
-.profile-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-section a {
-  color: var(--foreground-primary);
-  text-decoration: none;
-}
-
-.profile {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  background-color: var(--primary);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
-}
-
-.profile h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.profile:hover {
-  transform: scale(1.05);
-}
-
-.menu-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-  color: var(--foreground-primary);
   width: 100%;
+}
+
+.title-section h1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: var(--foreground-primary);
+  margin: 0;
 }

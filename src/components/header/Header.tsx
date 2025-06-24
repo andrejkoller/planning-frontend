@@ -1,21 +1,17 @@
-import Link from "next/link";
 import styles from "./Header.module.css";
-import { ButtonBase, Divider, Menu, MenuItem } from "@mui/material";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Theme } from "../theme/Theme";
 
 export const Header = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
   const pathname = usePathname();
   const pathnameTitles: Record<string, string> = {
-    "/": "Welcome to your Planning Dashboard",
+    "/": "Planning Dashboard",
     "/calendar": "Church Calendar Overview",
     "/service-plans": "Plan and Coordinate Your Services",
     "/teams": "Manage Your Ministry Teams",
     "/resources": "Reserve and Manage Church Resources",
     "/documents": "Store and Share Important Files",
+    "/profile": "Your Profile",
+    "/notifications": "Notifications",
   };
   const pathNameTexts: Record<string, string> = {
     "/": "Here you’ll find an overview of upcoming events, active teams, and recent changes across your church's planning activities.",
@@ -29,14 +25,9 @@ export const Header = () => {
       "Keep track of equipment, rooms, and other materials needed for services and events – all in one place.",
     "/documents":
       "Upload, organize, and access documents such as sermon notes, worship plans, and event guidelines.",
-  };
-
-  const handleToggleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
+    "/profile": "Manage your personal information and preferences.",
+    "/notifications":
+      "Stay updated with the latest announcements, reminders, and alerts related to your church's planning activities.",
   };
 
   return (
@@ -53,57 +44,6 @@ export const Header = () => {
               {pathNameTexts[pathname] ||
                 "Manage your church's planning activities with ease."}
             </p>
-          </div>
-          <div className={styles["menu-section"]}>
-            <div className={styles["profile-section"]}>
-              <ButtonBase
-                className={styles["profile-button"]}
-                onClick={handleToggleMenu}
-              >
-                <div className={styles["profile"]}>
-                  <h2 className={styles["profile-name"]}>A</h2>
-                </div>
-              </ButtonBase>
-              <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "center",
-                }}
-              >
-                <MenuItem>
-                  <Link href={"/profile"} className={styles["menu-link"]}>
-                    Profile
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href={"/settings"} className={styles["menu-link"]}>
-                    Settings
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href={"/help"} className={styles["menu-link"]}>
-                    Help
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href={"/admin"} className={styles["menu-link"]}>
-                    Admin Dashboard
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Theme />
-                </MenuItem>
-                <Divider sx={{ my: 0.5, backgroundColor: "var(--border)" }} />
-                <MenuItem>Logout</MenuItem>
-              </Menu>
-            </div>
           </div>
         </div>
       </div>

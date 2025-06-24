@@ -1,4 +1,4 @@
-.service-plans-section {
+.notifications-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-.service-plans-container {
+.notifications-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.service-plans-content {
+.notifications-content {
   display: flex;
   flex-direction: column;
   align-items: center;
