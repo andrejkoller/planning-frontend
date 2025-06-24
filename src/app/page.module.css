@@ -17,7 +17,6 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  gap: 1rem;
 }
 
 .main-content {
@@ -25,12 +24,10 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 100vh;
-  width: 100%;
-  margin-left: auto;
-  overflow: auto !important;
-  border-radius: 6px;
   background-color: var(--background-secondary);
+  height: 100vh;
+  width: calc(100% - 96px);
+  margin-left: auto;
 }
 
 .home-section {
@@ -45,7 +42,6 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   width: 100%;
   height: 100%;

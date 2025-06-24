@@ -13,8 +13,9 @@
   --foreground-primary: #000000;
   --foreground-secondary: #666666;
   --hover-background: #e0e0e0;
-  --link-active-background: #e0e0e0;
-  --link-background-hover: #e0e0e0;
+  --menu-background: #2a304a;
+  --link-active-background: #696f82;
+  --link-background-hover: #696f82;
   --card: #ffffff;
   --border: #cccccc;
   --text-active: #000000;
@@ -124,9 +125,9 @@
   --foreground-primary: #ffffff;
   --foreground-secondary: #9e9e9e;
   --hover-background: #333333;
-  --menu-background: #222222;
-  --link-active-background: #333333;
-  --link-background-hover: #333333;
+  --menu-background: #2a304a;
+  --link-active-background: #696f82;
+  --link-background-hover: #696f82;
   --card: #1a1a1a;
   --border: #333333;
   --text-active: #ffffff;
@@ -239,31 +240,4 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
-}
-
-.css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  background-color: var(--background-tertiary) !important;
-  border-radius: 4px !important;
-  width: 196px !important;
-}
-
-.css-1toxriw-MuiList-root-MuiMenu-list {
-  padding: 4px !important;
-  margin: 0 !important;
-  list-style: none !important;
-}
-
-.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root:hover {
-  background-color: var(--hover-background) !important;
-}
-
-.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root {
-  color: var(--foreground-primary) !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  padding: 8px !important;
-  transition: background-color 0.3s ease !important;
-  border-radius: 4px !important;
-  gap: 0.5rem !important;
 }

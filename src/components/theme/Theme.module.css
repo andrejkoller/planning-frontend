@@ -1,16 +1,14 @@
 .theme-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
 }
 
 .theme-button {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
