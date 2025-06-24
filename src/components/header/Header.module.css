@@ -1,6 +1,4 @@
 .header {
-  max-height: 5.5rem;
-  min-height: 5.5rem;
   width: 100%;
   z-index: 1000;
   transition: min-height 0.3s;
@@ -10,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5.5rem;
   width: 100%;
   margin: 0 auto;
   background-color: var(--background-primary);
@@ -21,27 +18,43 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem 2rem;
 }
 
-.logo-section {
+.title-section {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  gap: 0.5rem;
 }
 
-.logo {
-  font-size: 2rem;
-  font-weight: 600;
+.title {
+  font-size: 3rem;
+  font-weight: 500;
   margin: 0;
 }
 
-.logo a {
-  color: var(--foreground);
-  text-decoration: none;
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--foreground-secondary);
+  margin: 0;
+}
+
+.menu-section {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+}
+
+.menu-section svg {
+  width: 28px;
+  height: 28px;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
 }
 
 .profile-section {

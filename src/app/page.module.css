@@ -1,9 +1,22 @@
-.layout-content {
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.layout-container {
   display: flex;
   flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.layout-content {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  padding: 0 1rem;
-  gap: 1rem;
+  width: 100%;
 }
 
 .main-content {
@@ -12,9 +25,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: calc(100% - 96px);
+  width: 100%;
   margin-left: auto;
   overflow: auto !important;
   border-radius: 6px;
-  background-color: var(--background-secondary);
 }

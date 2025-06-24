@@ -1,21 +1,26 @@
 "use client";
 import {
-  BookOpen,
-  HomeIcon,
-  MessageCircleIcon,
-  MusicIcon,
+  BoxesIcon,
+  CalendarDaysIcon,
+  ClipboardListIcon,
+  FileTextIcon,
+  Grip,
+  LayoutDashboardIcon,
   SidebarClose,
   SidebarOpen,
-  UsersIcon,
+  Users2Icon,
 } from "lucide-react";
 import styles from "./Sidebar.module.css";
-import { Tooltip } from "@mui/material";
+import { ButtonBase, Tooltip } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
-export const Sidebar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+type sidebarProps = {
+  sidebarOpen: boolean;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Sidebar = ({ sidebarOpen, setSidebarOpen }: sidebarProps) => {
   const pathname = usePathname();
 
   const toggleSidebar = () => {
@@ -36,7 +41,7 @@ export const Sidebar = () => {
       <div className={styles["sidebar-container"]}>
         <div className={styles["sidebar-content"]}>
           <div className={styles["sidebar-control"]} onClick={toggleSidebar}>
-            <Tooltip title="Close Sidebar" placement="top">
+            <Tooltip title="Close Sidebar" placement="right">
               <span className={styles["toggle-button"]}>
                 <SidebarClose className={styles["toggle-icon"]} />
                 <span>Menu</span>
@@ -47,36 +52,51 @@ export const Sidebar = () => {
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Link href={"/"} style={isActive("/")}>
-                  <HomeIcon className={styles["icon"]} />
+                  <LayoutDashboardIcon className={styles["icon"]} />
                   <span className={styles["home-text"]}>Overview</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/services"} style={isActive("/services")}>
-                  <BookOpen className={styles["icon"]} />
-                  <span className={styles["services-text"]}>Services</span>
+                <Link href={"/"} style={isActive("/calendar")}>
+                  <CalendarDaysIcon className={styles["icon"]} />
+                  <span className={styles["home-text"]}>Calendar</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/messages"} style={isActive("/messages")}>
-                  <MessageCircleIcon className={styles["icon"]} />
-                  <span className={styles["messages-text"]}>Messages</span>
+                <Link
+                  href={"/service-plans"}
+                  style={isActive("/service-plans")}
+                >
+                  <ClipboardListIcon className={styles["icon"]} />
+                  <span className={styles["services-text"]}>Schedule</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <a href={"/music"} style={isActive("/music")}>
-                  <MusicIcon className={styles["icon"]} />
-                  <span className={styles["music-text"]}>Music</span>
+                <Link href={"/teams"} style={isActive("/teams")}>
+                  <Users2Icon className={styles["icon"]} />
+                  <span className={styles["messages-text"]}>Teams</span>
+                </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <a href={"/resources"} style={isActive("/resources")}>
+                  <BoxesIcon className={styles["icon"]} />
+                  <span className={styles["resources-text"]}>Resources</span>
                 </a>
               </li>
               <li className={styles["nav-item"]}>
                 <a href={"/users"} style={isActive("/users")}>
-                  <UsersIcon className={styles["icon"]} />
-                  <span className={styles["users-text"]}>Users</span>
+                  <FileTextIcon className={styles["icon"]} />
+                  <span className={styles["users-text"]}>Files & Notes</span>
                 </a>
               </li>
             </ul>
           </nav>
+          <div className={styles["apps-section"]}>
+            <ButtonBase className={styles["apps-button"]}>
+              <Grip className={styles["icon"]} />
+              <span className={styles["apps-text"]}>Other Apps</span>
+            </ButtonBase>
+          </div>
         </div>
       </div>
     </aside>
@@ -97,40 +117,59 @@ export const Sidebar = () => {
               <li className={styles["nav-item"]}>
                 <Tooltip title="Overview" placement="right">
                   <Link href={"/"} style={isActive("/")}>
-                    <HomeIcon className={styles["icon"]} />
+                    <LayoutDashboardIcon className={styles["icon"]} />
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
-                <Tooltip title="Services" placement="right">
-                  <Link href={"/services"} style={isActive("/services")}>
-                    <BookOpen className={styles["icon"]} />
+                <Tooltip title="Calendar" placement="right">
+                  <Link href={"/"} style={isActive("/calendar")}>
+                    <CalendarDaysIcon className={styles["icon"]} />
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
-                <Tooltip title="Messages" placement="right">
-                  <Link href={"/messages"} style={isActive("/messages")}>
-                    <MessageCircleIcon className={styles["icon"]} />
+                <Tooltip title="Service Plans" placement="right">
+                  <Link
+                    href={"/service-plans"}
+                    style={isActive("/service-plans")}
+                  >
+                    <ClipboardListIcon className={styles["icon"]} />
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
-                <Tooltip title="Music" placement="right">
-                  <a href={"/music"} style={isActive("/music")}>
-                    <MusicIcon className={styles["icon"]} />
+                <Tooltip title="Teams" placement="right">
+                  <Link href={"/teams"} style={isActive("/teams")}>
+                    <Users2Icon className={styles["icon"]} />
+                  </Link>
+                </Tooltip>
+              </li>
+              <li className={styles["nav-item"]}>
+                <Tooltip title="Resources" placement="right">
+                  <a href={"/resources"} style={isActive("/resources")}>
+                    <BoxesIcon className={styles["icon"]} />
                   </a>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
-                <Tooltip title="Users" placement="right">
-                  <a href={"/users"} style={isActive("/users")}>
-                    <UsersIcon className={styles["icon"]} />
+                <Tooltip title="Files & Notes" placement="right">
+                  <a href={"/documents"} style={isActive("/documents")}>
+                    <FileTextIcon className={styles["icon"]} />
                   </a>
                 </Tooltip>
               </li>
             </ul>
           </nav>
+          <div className={styles["apps-section"]}>
+            <Tooltip title="Other Apps" placement="right">
+              <ButtonBase className={styles["apps-button"]}>
+                <span className={styles["icon"]}>
+                  <Grip />
+                </span>
+              </ButtonBase>
+            </Tooltip>
+          </div>
         </div>
       </div>
     </aside>
