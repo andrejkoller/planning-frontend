@@ -2,8 +2,8 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { ButtonBase, Divider, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { Theme } from "../theme/Theme";
 
 export const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -70,11 +70,11 @@ export const Header = () => {
                 onClose={handleClose}
                 anchorOrigin={{
                   vertical: "bottom",
-                  horizontal: "right",
+                  horizontal: "center",
                 }}
                 transformOrigin={{
                   vertical: "top",
-                  horizontal: "right",
+                  horizontal: "center",
                 }}
               >
                 <MenuItem>
@@ -87,11 +87,18 @@ export const Header = () => {
                     Settings
                   </Link>
                 </MenuItem>
-                <MenuItem href="/help">
+                <MenuItem>
                   <Link href={"/help"} className={styles["menu-link"]}>
                     Help
-                    <ExternalLink className={styles["external-link-icon"]} />
                   </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href={"/admin"} className={styles["menu-link"]}>
+                    Admin Dashboard
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Theme />
                 </MenuItem>
                 <Divider sx={{ my: 0.5, backgroundColor: "var(--border)" }} />
                 <MenuItem>Logout</MenuItem>

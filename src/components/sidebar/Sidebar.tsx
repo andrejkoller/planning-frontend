@@ -2,6 +2,7 @@
 import {
   BoxesIcon,
   CalendarDaysIcon,
+  ChevronLeftIcon,
   ClipboardListIcon,
   FileTextIcon,
   Grip,
@@ -27,14 +28,14 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: sidebarProps) => {
     setSidebarOpen((prev) => !prev);
   };
 
-  const isActive = (path: string) => {
-    return pathname === path
+  const isActive = (path: string) => pathname === path;
+  const getActiveStyle = (path: string) =>
+    pathname === path
       ? {
           color: "var(--foreground)",
           backgroundColor: "var(--link-active-background)",
         }
       : {};
-  };
 
   return sidebarOpen ? (
     <aside className={styles["sidebar-expanded"]}>
@@ -51,42 +52,60 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: sidebarProps) => {
           <nav className={styles["nav-section"]}>
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
-                <Link href={"/"} style={isActive("/")}>
+                <Link href={"/"} style={getActiveStyle("/")}>
                   <LayoutDashboardIcon className={styles["icon"]} />
                   <span className={styles["home-text"]}>Overview</span>
+                  {isActive("/") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/"} style={isActive("/calendar")}>
+                <Link href={"/calendar"} style={getActiveStyle("/calendar")}>
                   <CalendarDaysIcon className={styles["icon"]} />
                   <span className={styles["home-text"]}>Calendar</span>
+                  {isActive("/calendar") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
                 <Link
                   href={"/service-plans"}
-                  style={isActive("/service-plans")}
+                  style={getActiveStyle("/service-plans")}
                 >
                   <ClipboardListIcon className={styles["icon"]} />
                   <span className={styles["services-text"]}>Schedule</span>
+                  {isActive("/service-plans") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/teams"} style={isActive("/teams")}>
+                <Link href={"/teams"} style={getActiveStyle("/teams")}>
                   <Users2Icon className={styles["icon"]} />
                   <span className={styles["messages-text"]}>Teams</span>
+                  {isActive("/teams") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <a href={"/resources"} style={isActive("/resources")}>
+                <a href={"/resources"} style={getActiveStyle("/resources")}>
                   <BoxesIcon className={styles["icon"]} />
                   <span className={styles["resources-text"]}>Resources</span>
+                  {isActive("/resources") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </a>
               </li>
               <li className={styles["nav-item"]}>
-                <a href={"/users"} style={isActive("/users")}>
+                <a href={"/documents"} style={getActiveStyle("/documents")}>
                   <FileTextIcon className={styles["icon"]} />
                   <span className={styles["users-text"]}>Files & Notes</span>
+                  {isActive("/documents") && (
+                    <ChevronLeftIcon className={styles["chevron-icon"]} />
+                  )}
                 </a>
               </li>
             </ul>
@@ -116,15 +135,21 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: sidebarProps) => {
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Overview" placement="right">
-                  <Link href={"/"} style={isActive("/")}>
+                  <Link href={"/"} style={getActiveStyle("/")}>
                     <LayoutDashboardIcon className={styles["icon"]} />
+                    {isActive("/") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Calendar" placement="right">
-                  <Link href={"/"} style={isActive("/calendar")}>
+                  <Link href={"/calendar"} style={getActiveStyle("/calendar")}>
                     <CalendarDaysIcon className={styles["icon"]} />
+                    {isActive("/calendar") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
                   </Link>
                 </Tooltip>
               </li>
@@ -132,31 +157,49 @@ export const Sidebar = ({ sidebarOpen, setSidebarOpen }: sidebarProps) => {
                 <Tooltip title="Service Plans" placement="right">
                   <Link
                     href={"/service-plans"}
-                    style={isActive("/service-plans")}
+                    style={getActiveStyle("/service-plans")}
                   >
                     <ClipboardListIcon className={styles["icon"]} />
+                    {isActive("/service-plans") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Teams" placement="right">
-                  <Link href={"/teams"} style={isActive("/teams")}>
+                  <Link href={"/teams"} style={getActiveStyle("/teams")}>
                     <Users2Icon className={styles["icon"]} />
+                    {isActive("/teams") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
                   </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Resources" placement="right">
-                  <a href={"/resources"} style={isActive("/resources")}>
+                  <Link
+                    href={"/resources"}
+                    style={getActiveStyle("/resources")}
+                  >
                     <BoxesIcon className={styles["icon"]} />
-                  </a>
+                    {isActive("/resources") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
+                  </Link>
                 </Tooltip>
               </li>
               <li className={styles["nav-item"]}>
                 <Tooltip title="Files & Notes" placement="right">
-                  <a href={"/documents"} style={isActive("/documents")}>
+                  <Link
+                    href={"/documents"}
+                    style={getActiveStyle("/documents")}
+                  >
                     <FileTextIcon className={styles["icon"]} />
-                  </a>
+                    {isActive("/documents") && (
+                      <ChevronLeftIcon className={styles["chevron-icon"]} />
+                    )}
+                  </Link>
                 </Tooltip>
               </li>
             </ul>

@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   padding: 12px 14px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   transition: background-color 0.3s ease;
   border-radius: 6px;
   text-decoration: none;
@@ -87,12 +87,23 @@
 }
 
 .sidebar-collapsed .nav-item a:hover {
-  background-color: var(--button-background-hover);
+  background-color: var(--link-background-hover);
 }
 
 .sidebar-collapsed .nav-item a svg {
   width: 28px;
   height: 28px;
+}
+
+.chevron-icon {
+  width: 32px !important;
+  height: 32px !important;
+  fill: var(--background-primary);
+  color: var(--background-primary);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -12px;
 }
 
 .sidebar-collapsed .apps-section {
@@ -102,12 +113,17 @@
   justify-content: center;
   margin-bottom: 24px;
   padding: 0 14px;
+  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.sidebar-collapsed .apps-section:hover {
+  transform: scale(1.05);
 }
 
 .sidebar-collapsed .apps-section svg {
   width: 28px;
   height: 28px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -199,7 +215,7 @@
   justify-content: flex-start;
   gap: 16px;
   padding: 12px 14px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   transition: background-color 0.3s ease;
   border-radius: 6px;
   width: 100%;
@@ -208,7 +224,7 @@
 }
 
 .sidebar-expanded .nav-item a:hover {
-  background-color: var(--button-background-hover);
+  background-color: var(--link-background-hover);
 }
 
 .sidebar-expanded .nav-item a svg {
@@ -223,18 +239,23 @@
   justify-content: center;
   margin-bottom: 24px;
   padding: 0 14px;
+  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.sidebar-expanded .apps-section:hover {
+  transform: scale(1.05);
 }
 
 .sidebar-expanded .apps-section span {
   font-size: 16px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   margin-left: 8px;
 }
 
 .sidebar-expanded .apps-section svg {
   width: 28px;
   height: 28px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   cursor: pointer;
   transition: transform 0.3s ease;
 }

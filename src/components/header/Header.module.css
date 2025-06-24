@@ -15,7 +15,7 @@
 
 .header-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
@@ -52,7 +52,7 @@
 .menu-section svg {
   width: 28px;
   height: 28px;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
 }
@@ -64,7 +64,7 @@
 }
 
 .profile-section a {
-  color: var(--foreground);
+  color: var(--foreground-primary);
   text-decoration: none;
 }
 
@@ -74,12 +74,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--foreground);
+  color: #ffffff;
   background-color: var(--primary);
   border-radius: 999px;
   cursor: pointer;
   transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
-  border: 0.225rem solid var(--foreground);
 }
 
 .profile h2 {
@@ -97,12 +96,6 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  color: var(--foreground);
+  color: var(--foreground-primary);
   width: 100%;
-}
-
-.menu-link svg {
-  width: 24px;
-  height: 24px;
-  color: var(--foreground);
 }

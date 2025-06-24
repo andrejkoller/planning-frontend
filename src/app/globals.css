@@ -7,11 +7,12 @@
   --primary: #61c0ff;
   --primary-hover: #4da6e6;
   --primary-active: #3990cc;
-  --background-primary: #f0f0f0;
+  --background-primary: #ebeff7;
   --background-secondary: #ffffff;
   --foreground: #000000;
   --hover-background: #e0e0e0;
   --link-active-background: #e0e0e0;
+  --link-background-hover: #e0e0e0;
   --card: #ffffff;
   --border: #cccccc;
   --text-active: #000000;
@@ -115,12 +116,14 @@
   --primary: #61c0ff;
   --primary-hover: #4da6e6;
   --primary-active: #3990cc;
-  --background-primary: #000000;
-  --background-secondary: #111111;
-  --foreground: #ffffff;
+  --background-primary: #121212;
+  --background-secondary: #1a1a1a;
+  --foreground-primary: #ffffff;
+  --foreground-secondary: #9e9e9e;
   --hover-background: #333333;
   --menu-background: #222222;
-  --link-active-background: #222222;
+  --link-active-background: #121212;
+  --link-background-hover: #121212;
   --card: #1a1a1a;
   --border: #333333;
   --text-active: #ffffff;
@@ -221,7 +224,7 @@
 }
 
 body {
-  color: var(--foreground);
+  color: var(--foreground-primary);
   background: var(--background-primary);
   font-family: var(--font-inter), Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -237,13 +240,13 @@ body {
 }
 
 .css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  background-color: var(--menu-background) !important;
+  background-color: var(--background-secondary) !important;
   border-radius: 4px !important;
-  width: 200px !important;
+  width: 196px !important;
 }
 
 .css-1toxriw-MuiList-root-MuiMenu-list {
-  padding: 0 !important;
+  padding: 4px !important;
   margin: 0 !important;
   list-style: none !important;
 }
@@ -253,10 +256,11 @@ body {
 }
 
 .css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root {
-  color: var(--foreground) !important;
+  color: var(--foreground-primary) !important;
   font-size: 16px !important;
   font-weight: 500 !important;
-  padding: 8px 16px !important;
+  padding: 8px !important;
   transition: background-color 0.3s ease !important;
   border-radius: 4px !important;
+  gap: 0.5rem !important;
 }
