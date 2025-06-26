@@ -8,7 +8,6 @@ export default function Page() {
           <div className={styles["teams-header"]}></div>
           <div className={styles["teams-body"]}>
             {/* Placeholder for teams list or management component */}
-            <p>No teams available. Please create a team to get started.</p>
           </div>
         </div>
       </div>

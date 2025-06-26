@@ -9,7 +9,6 @@ export default function Page() {
           <div className={styles["service-plans-body"]}>
             <div className={styles["service-plans-list"]}>
               {/* Placeholder for service plans list */}
-              <p>No service plans available.</p>
             </div>
           </div>
         </div>

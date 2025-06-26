@@ -9,7 +9,6 @@ export default function Home() {
           <div className={styles["home-body"]}>
             <div className={styles["home-features"]}>
               {/* Placeholder for features or quick links */}
-              <p>Explore the features of the Planning App.</p>
             </div>
           </div>
         </div>

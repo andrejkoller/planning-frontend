@@ -8,7 +8,6 @@ export default function Page() {
           <div className={styles["calendar-header"]}></div>
           <div className={styles["calendar-body"]}>
             {/* Placeholder for calendar component */}
-            <p>Calendar functionality will be implemented here.</p>
           </div>
         </div>
       </div>
