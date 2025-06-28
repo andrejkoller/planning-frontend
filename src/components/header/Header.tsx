@@ -79,8 +79,8 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     borderRadius: "16px !important",
                     padding: "8px !important",
                     width: "260px !important",
-                    color: "var(--foreground-primary) !important",
-                    backgroundColor: "var(--color-menu-background) !important",
+                    color: "var(--text-default) !important",
+                    backgroundColor: "var(--bg-menu) !important",
                   },
                   "& .MuiList-root": {
                     display: "flex",
@@ -126,7 +126,14 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                   <InfoIcon className={styles["profile-menu-icon"]} />
                   About
                 </MenuItem>
-                <MenuItem className={styles["profile-menu-item"]}>
+                <MenuItem
+                  sx={{
+                    "&:hover": {
+                      backgroundColor: "var(--alert-error-bg) !important",
+                    },
+                  }}
+                  className={styles["profile-menu-item"]}
+                >
                   Logout
                 </MenuItem>
               </Menu>

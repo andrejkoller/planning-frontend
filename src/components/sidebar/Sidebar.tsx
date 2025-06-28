@@ -27,8 +27,8 @@ export const Sidebar = ({
   const getActiveStyle = (path: string) =>
     pathname === path
       ? {
-          color: "var(--hover-text)",
-          backgroundColor: "var(--color-menu-link-hover)",
+          color: "var(--text-default)",
+          backgroundColor: "var(--link-hover-bg)",
         }
       : {};
 

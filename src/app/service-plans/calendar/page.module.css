@@ -33,12 +33,12 @@
 
 .calendar-header h1 {
   font-size: 1.5rem;
-  color: var(--foreground-primary);
+  color: var(--text-default);
   margin: 0;
 }
 
 .calendar-header p {
   font-size: 1rem;
-  color: var(--foreground-secondary);
+  color: var(--text-default);
   margin-top: 0.5rem;
 }

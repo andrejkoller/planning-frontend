@@ -1,7 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-secondary);
+  background-color: var(--bg-secondary);
   padding: 0 20px;
   height: 64px;
   min-height: 64px;
@@ -53,11 +53,11 @@ button.menu-button {
 .menu-icon {
   width: 20px;
   height: 20px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
 }
 
 .menu-button:hover {
-  background-color: var(--color-menu-link-hover);
+  background-color: var(--link-hover-bg);
 }
 
 .right-section {
@@ -84,7 +84,7 @@ button.notifications-button {
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
-  background-color: var(--background-primary);
+  background-color: var(--bg-main);
   height: 40px;
   width: 40px;
 }
@@ -93,12 +93,12 @@ button.notifications-button {
 .bell-icon {
   width: 20px;
   height: 20px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
 }
 
 button.chat-button:hover,
 button.notifications-button:hover {
-  background-color: var(--color-menu-link-hover);
+  background-color: var(--link-hover-bg);
 }
 
 .profile-section {
@@ -124,7 +124,7 @@ button.profile-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   border-radius: 50%;
   width: 48px;
   height: 48px;
@@ -157,12 +157,12 @@ button.profile-button {
 .profile-menu-item svg {
   width: 20px;
   height: 20px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
   margin-right: 8px;
 }
 
 .profile-menu-item:hover {
-  background-color: var(--color-menu-link-hover) !important;
+  background-color: var(--link-hover-bg) !important;
 }
 
 .profile-menu-header {
@@ -182,7 +182,7 @@ button.profile-button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 

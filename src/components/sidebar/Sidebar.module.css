@@ -3,8 +3,8 @@
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
-  background-color: var(--background-primary);
-  border-right: 1px solid var(--border);
+  background-color: var(--bg-main);
+  border-right: 1px solid var(--border-default);
 }
 
 .sidebar-container {
@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 16px;
   height: 64px;
   width: 100%;
 }
@@ -40,7 +41,7 @@
 
 .logo h1 {
   font-size: 20px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
   margin: 0;
   padding-left: 8px;
 }
@@ -68,11 +69,11 @@ button.menu-button {
 .menu-icon {
   width: 20px;
   height: 20px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
 }
 
 .menu-button:hover {
-  background-color: var(--color-menu-link-hover);
+  background-color: var(--link-hover-bg);
 }
 
 .nav-section {
@@ -111,7 +112,7 @@ button.menu-button {
   align-items: center;
   justify-content: flex-start;
   padding: 8px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
   border-radius: 10px;
   text-decoration: none;
   height: 24px;
@@ -119,7 +120,7 @@ button.menu-button {
 }
 
 .nav-item a:hover {
-  background-color: var(--color-menu-link-hover);
+  background-color: var(--link-hover-bg);
   color: #ffffff;
 }
 
@@ -127,12 +128,12 @@ button.menu-button {
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
 }
 
 .nav-item span {
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: var(--foreground-primary);
+  color: var(--text-default);
 }
