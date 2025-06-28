@@ -1,10 +1,11 @@
 .header {
   display: flex;
   flex-direction: column;
-  transition: min-height 0.3s;
   background-color: var(--background-secondary);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem;
+  padding: 0 20px;
+  height: 64px;
+  min-height: 64px;
+  transition: min-height 0.3s;
 }
 
 .header-container {
@@ -22,17 +23,82 @@
   width: 100%;
 }
 
-.title-section {
+.left-section {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-h1.title-text {
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0;
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+button.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--foreground-primary);
+}
+
+.menu-button:hover {
+  background-color: var(--color-menu-link-hover);
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 32px;
+}
+
+.chat-section,
+.notifications-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.chat-button,
+button.notifications-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--background-primary);
+  height: 40px;
+  width: 40px;
+}
+
+.chat-icon,
+.bell-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--foreground-primary);
+}
+
+button.chat-button:hover,
+button.notifications-button:hover {
+  background-color: var(--color-menu-link-hover);
 }
 
 .profile-section {
@@ -42,29 +108,86 @@ h1.title-text {
   height: 100%;
 }
 
-.profile-button {
+button.profile-button {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--primary);
-  border-radius: 50%;
-  text-decoration: none;
-  width: 44px;
-  height: 44px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 8px;
 }
 
 .profile {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
 }
 
-.profile-name {
-  font-size: 16px;
+.profile-logo {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile-menu {
+  position: absolute;
+  right: 20px !important;
+  border-radius: 16px !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 4px 8px 4px 12px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.profile-menu-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--foreground-primary);
+  margin-right: 8px;
+}
+
+.profile-menu-item:hover {
+  background-color: var(--color-menu-link-hover) !important;
+}
+
+.profile-menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.profile-menu-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary);
   color: #ffffff;
 }
 
-.profile-button:hover {
-  transform: scale(1.05);
+.profile-menu-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
 }

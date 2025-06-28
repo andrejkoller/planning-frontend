@@ -1,34 +1,136 @@
-import Link from "next/link";
 import styles from "./Header.module.css";
-import { usePathname } from "next/navigation";
+import { ButtonBase, Divider, Menu, MenuItem } from "@mui/material";
+import {
+  BellIcon,
+  InfoIcon,
+  LanguagesIcon,
+  MenuIcon,
+  MessageSquareIcon,
+  SettingsIcon,
+} from "lucide-react";
+import { useState } from "react";
+import { Theme } from "../theme/Theme";
 
-export const Header = () => {
-  const pathname = usePathname();
+type HeaderProps = {
+  isOpen?: boolean;
+  onToggle?: () => void;
+};
 
-  const pathnameTitleMap: Record<string, string> = {
-    "/": "Home",
-    "/service-plans": "Service Plans",
-    "/teams": "Teams",
-    "/music": "Music",
-    "/invite": "Invite Members",
-    "/profile": "Your Profile",
+export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMenuToggle = () => {
+    if (toggleSidebar) {
+      toggleSidebar();
+    }
   };
 
   return (
     <header className={styles["header"]}>
       <div className={styles["header-container"]}>
         <div className={styles["header-content"]}>
-          <div className={styles["title-section"]}>
-            <h1 className={styles["title-text"]}>
-              {pathnameTitleMap[pathname] || "Planning"}
-            </h1>
-          </div>
-          <div className={styles["profile-section"]}>
-            <Link href={"/profile"} className={styles["profile-button"]}>
-              <div className={styles["profile"]}>
-                <h2 className={styles["profile-name"]}>A</h2>
+          <div className={styles["left-section"]}>
+            {!isOpen && (
+              <div className={styles["menu-toggle"]}>
+                <ButtonBase
+                  className={styles["menu-button"]}
+                  onClick={handleMenuToggle}
+                >
+                  <MenuIcon className={styles["menu-icon"]} />
+                </ButtonBase>
               </div>
-            </Link>
+            )}
+          </div>
+          <div className={styles["right-section"]}>
+            <div className={styles["chat-section"]}>
+              <ButtonBase className={styles["chat-button"]}>
+                <MessageSquareIcon className={styles["chat-icon"]} />
+              </ButtonBase>
+            </div>
+            <div className={styles["notifications-section"]}>
+              <ButtonBase className={styles["notifications-button"]}>
+                <BellIcon className={styles["bell-icon"]} />
+              </ButtonBase>
+            </div>
+            <div className={styles["profile-section"]}>
+              <ButtonBase
+                className={styles["profile-button"]}
+                onClick={handleClick}
+              >
+                <div className={styles["profile"]}>
+                  <h2 className={styles["profile-logo"]}>AK</h2>
+                </div>
+              </ButtonBase>
+              <Menu
+                sx={{
+                  "& .MuiPaper-root": {
+                    top: "64px !important",
+                    left: "auto !important",
+                    right: "0 !important",
+                    borderRadius: "16px !important",
+                    padding: "8px !important",
+                    width: "260px !important",
+                    color: "var(--foreground-primary) !important",
+                    backgroundColor: "var(--color-menu-background) !important",
+                  },
+                  "& .MuiList-root": {
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "4px !important",
+                    padding: "0 !important",
+                  },
+                }}
+                className={styles["profile-menu"]}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                transformOrigin={{
+                  vertical: "bottom",
+                  horizontal: "right",
+                }}
+                keepMounted
+                open={open}
+                onClose={handleClose}
+              >
+                <div className={styles["profile-menu-header"]}>
+                  <div className={styles["profile-menu-avatar"]}>
+                    <h2 className={styles["profile-menu-logo"]}>AK</h2>
+                  </div>
+                  <span className={styles["profile-menu-name"]}>
+                    Andrej Koller
+                  </span>
+                </div>
+                <Divider className={styles["profile-menu-divider"]} />
+                <MenuItem className={styles["profile-menu-item"]}>
+                  <SettingsIcon className={styles["profile-menu-icon"]} />
+                  Account Settings
+                </MenuItem>
+                <MenuItem className={styles["profile-menu-item"]}>
+                  <LanguagesIcon className={styles["profile-menu-icon"]} />
+                  Language
+                </MenuItem>
+                <MenuItem className={styles["profile-menu-item"]}>
+                  <Theme />
+                </MenuItem>
+                <MenuItem className={styles["profile-menu-item"]}>
+                  <InfoIcon className={styles["profile-menu-icon"]} />
+                  About
+                </MenuItem>
+                <MenuItem className={styles["profile-menu-item"]}>
+                  Logout
+                </MenuItem>
+              </Menu>
+            </div>
           </div>
         </div>
       </div>
