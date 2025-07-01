@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/contexts/theme/ThemeProvider";
 import styles from "./page.module.css";
 import { Header } from "@/components/header/Header";
 import { Sidebar } from "@/components/sidebar/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LayoutClient({
   children,
@@ -11,10 +11,23 @@ export default function LayoutClient({
   children: React.ReactNode;
 }>) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+    const newValue = !sidebarOpen;
+    setSidebarOpen(newValue);
+    if (isClient) {
+      localStorage.setItem("sidebarOpen", String(newValue));
+    }
   };
+
+  useEffect(() => {
+    setIsClient(true);
+    const storedSidebarOpen = localStorage.getItem("sidebarOpen");
+    if (storedSidebarOpen !== null) {
+      setSidebarOpen(storedSidebarOpen === "true");
+    }
+  }, []);
 
   return (
     <ThemeProvider>

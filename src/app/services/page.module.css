@@ -1,18 +1,18 @@
-.service-plans-section {
+.services-section {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.service-plans-container {
+.services-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.service-plans-content {
+.services-content {
   display: flex;
   flex-direction: column;
   align-items: center;

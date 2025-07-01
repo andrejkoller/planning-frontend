@@ -1,6 +1,7 @@
 "use client";
 import {
   CalendarIcon,
+  FilesIcon,
   FolderIcon,
   HomeIcon,
   MenuIcon,
@@ -78,6 +79,12 @@ export const Sidebar = ({
                 <Link href={"/services"} style={getActiveStyle("/services")}>
                   <FolderIcon className={styles["icon"]} />
                   <span className={styles["nav-item-label"]}>Services</span>
+                </Link>
+              </li>
+              <li className={styles["nav-item"]}>
+                <Link href={"/documents"} style={getActiveStyle("/documents")}>
+                  <FilesIcon className={styles["icon"]} />
+                  <span className={styles["nav-item-label"]}>Documents</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>

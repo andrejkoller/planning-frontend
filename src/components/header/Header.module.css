@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
   height: 100%;
 }
 
@@ -58,6 +59,48 @@ button.menu-button {
 
 .menu-button:hover {
   background-color: var(--link-hover-bg);
+}
+
+.navigation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+button.navigation-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  height: 40px;
+  width: 40px;
+}
+
+.navigation-button:hover {
+  background-color: var(--link-hover-bg);
+}
+
+.navigation-button svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-default);
 }
 
 .right-section {
@@ -139,8 +182,6 @@ button.profile-button {
 .profile-menu {
   position: absolute;
   right: 20px !important;
-  border-radius: 16px !important;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .profile-menu-item {
@@ -167,12 +208,17 @@ button.profile-button {
 
 .profile-menu-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   margin: 12px 0;
   width: 100%;
+}
+
+.profile-menu-header span {
+  font-size: 14px;
+  color: var(--text-default);
 }
 
 .profile-menu-avatar {

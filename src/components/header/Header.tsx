@@ -1,6 +1,9 @@
+"use client";
 import styles from "./Header.module.css";
 import { ButtonBase, Divider, Menu, MenuItem } from "@mui/material";
 import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
   BellIcon,
   InfoIcon,
   LanguagesIcon,
@@ -49,6 +52,22 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                 </ButtonBase>
               </div>
             )}
+            <div className={styles["navigation-section"]}>
+              <div className={styles["navigation-buttons"]}>
+                <ButtonBase
+                  className={styles["navigation-button"]}
+                  onClick={() => {}}
+                >
+                  <ArrowLeftIcon className={styles["navigation-icon"]} />
+                </ButtonBase>
+                <ButtonBase
+                  className={styles["navigation-button"]}
+                  onClick={() => {}}
+                >
+                  <ArrowRightIcon className={styles["navigation-icon"]} />
+                </ButtonBase>
+              </div>
+            </div>
           </div>
           <div className={styles["right-section"]}>
             <div className={styles["chat-section"]}>
@@ -110,7 +129,14 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     Andrej Koller
                   </span>
                 </div>
-                <Divider className={styles["profile-menu-divider"]} />
+                <Divider
+                  sx={{
+                    "&.MuiDivider-root": {
+                      borderColor: "var(--border-default) !important",
+                    },
+                  }}
+                  className={styles["profile-menu-divider"]}
+                />
                 <MenuItem className={styles["profile-menu-item"]}>
                   <SettingsIcon className={styles["profile-menu-icon"]} />
                   Account Settings

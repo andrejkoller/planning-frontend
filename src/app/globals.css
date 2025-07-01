@@ -5,9 +5,9 @@
 
 [data-theme="light"] {
   /* === Primary Colors === */
-  --color-primary: #e66cdc;
-  --color-primary-hover: #c94cc9;
-  --color-primary-active: #b32ab0;
+  --color-primary: #5a6ee6;
+  --color-primary-hover: #3e52cc;
+  --color-primary-active: #2c3aa6;
 
   /* === Backgrounds === */
   --bg-main: #f2f9ff;
@@ -37,12 +37,12 @@
   --card-shadow-hover: rgba(0, 0, 0, 0.08);
 
   /* === Buttons === */
-  --btn-bg: #766ce6;
-  --btn-bg-hover: #5a4cc9;
-  --btn-text: #ffffff;
-  --btn-text-hover: #ffffff;
-  --btn-border: #5a4cc9;
-  --btn-border-hover: #3a2ab0;
+  --btn-bg: var(--bg-menu);
+  --btn-bg-hover: var(--bg-secondary);
+  --btn-text: var(--text-default);
+  --btn-text-hover: var(--text-default);
+  --btn-border: #d0d4db;
+  --btn-border-hover: #b0b4c2;
   --btn-shadow: rgba(118, 108, 230, 0.15);
   --btn-shadow-hover: rgba(118, 108, 230, 0.25);
 
@@ -110,9 +110,9 @@
 
 [data-theme="dark"] {
   /* === Primary Colors === */
-  --color-primary: #e66cdc;
-  --color-primary-hover: #c94cc9;
-  --color-primary-active: #b32ab0;
+  --color-primary: #5a6ee6;
+  --color-primary-hover: #3e52cc;
+  --color-primary-active: #2c3aa6;
 
   /* === Backgrounds === */
   --bg-main: #1c1c1c;
@@ -131,7 +131,7 @@
   --link-hover-bg: #3a3a3a;
 
   /* === Borders === */
-  --border-default: var(--bg-menu);
+  --border-default: #3a3a3a;
 
   /* === Cards === */
   --card-bg: var(--bg-secondary);
