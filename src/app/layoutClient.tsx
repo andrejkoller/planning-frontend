@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { Header } from "@/components/header/Header";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 import { useEffect, useState } from "react";
+import { AppSwitcher } from "@/components/app-switcher/AppSwitcher";
 
 export default function LayoutClient({
   children,
@@ -40,6 +41,7 @@ export default function LayoutClient({
           </div>
         </div>
       </div>
+      <AppSwitcher />
     </ThemeProvider>
   );
 }

@@ -1,0 +1,17 @@
+.app-switcher {
+  position: absolute !important;
+  bottom: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  background-color: var(--bg-main) !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--border-default) !important;
+  z-index: 1000;
+}
+
+.app-switcher svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-default);
+}

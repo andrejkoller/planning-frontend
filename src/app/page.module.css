@@ -87,17 +87,20 @@
   border-bottom: 1px solid var(--border-default);
 }
 
-.widget-title {
+a.widget-title {
   font-size: 1rem;
   margin: 0;
   padding: 4px;
   cursor: pointer;
+  color: var(--text-default);
+  text-decoration: none;
 }
 
 .widget-body {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 16px;
+  margin-top: 10px;
 }
 
 .widget-text {

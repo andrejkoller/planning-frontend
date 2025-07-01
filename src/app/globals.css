@@ -4,6 +4,11 @@
 }
 
 [data-theme="light"] {
+  /* === App Colors === */
+  --color-app: #56cfe1;
+  --color-app-hover: #3abbd3;
+  --color-app-active: #2aaac1;
+
   /* === Primary Colors === */
   --color-primary: #5a6ee6;
   --color-primary-hover: #3e52cc;
@@ -109,6 +114,11 @@
 }
 
 [data-theme="dark"] {
+  /* === App Colors === */
+  --color-app: #56cfe1;
+  --color-app-hover: #3abbd3;
+  --color-app-active: #2aaac1;
+
   /* === Primary Colors === */
   --color-primary: #5a6ee6;
   --color-primary-hover: #3e52cc;

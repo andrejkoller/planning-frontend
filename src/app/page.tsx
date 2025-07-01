@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -9,7 +10,9 @@ export default function Home() {
             <div className={styles["overview"]}>
               <div className={styles["widget"]}>
                 <div className={styles["widget-header"]}>
-                  <p className={styles["widget-title"]}>Users</p>
+                  <Link href="/calendar" className={styles["widget-title"]}>
+                    Users
+                  </Link>
                 </div>
                 <div className={styles["widget-body"]}>
                   <p className={styles["widget-text"]}>
@@ -20,7 +23,9 @@ export default function Home() {
               </div>
               <div className={styles["widget"]}>
                 <div className={styles["widget-header"]}>
-                  <p className={styles["widget-title"]}>Upcoming Services</p>
+                  <Link href="/services" className={styles["widget-title"]}>
+                    Upcoming Services
+                  </Link>
                 </div>
                 <div className={styles["widget-body"]}>
                   <p className={styles["widget-text"]}>
@@ -30,11 +35,14 @@ export default function Home() {
               </div>
               <div className={styles["widget"]}>
                 <div className={styles["widget-header"]}>
-                  <p className={styles["widget-title"]}>Announcements</p>
+                  <Link href="/documents" className={styles["widget-title"]}>
+                    Documents
+                  </Link>
                 </div>
                 <div className={styles["widget-body"]}>
                   <p className={styles["widget-text"]}>
-                    You have currently no announcements.
+                    You have currently no documents in your church management
+                    system.
                   </p>
                 </div>
               </div>

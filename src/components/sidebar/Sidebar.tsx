@@ -3,7 +3,7 @@ import {
   CalendarIcon,
   FilesIcon,
   FolderIcon,
-  HomeIcon,
+  LayoutGridIcon,
   MenuIcon,
   MusicIcon,
   SettingsIcon,
@@ -65,7 +65,7 @@ export const Sidebar = ({
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Link href={"/"} style={getActiveStyle("/")}>
-                  <HomeIcon className={styles["icon"]} />
+                  <LayoutGridIcon className={styles["icon"]} />
                   <span className={styles["nav-item-label"]}>Overview</span>
                 </Link>
               </li>
