@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Theme } from "../theme/Theme";
+import { useNavigationHistory } from "@/hooks/UseNavigationHistory";
 
 type HeaderProps = {
   isOpen?: boolean;
@@ -21,6 +22,7 @@ type HeaderProps = {
 
 export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { canGoBack, canGoForward, goBack, goForward } = useNavigationHistory();
   const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -34,6 +36,14 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
   const handleMenuToggle = () => {
     if (toggleSidebar) {
       toggleSidebar();
+    }
+  };
+
+  const handleNavigation = (direction: "left" | "right") => {
+    if (direction === "left" && canGoBack) {
+      goBack();
+    } else if (direction === "right" && canGoForward) {
+      goForward();
     }
   };
 
@@ -56,13 +66,23 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
               <div className={styles["navigation-buttons"]}>
                 <ButtonBase
                   className={styles["navigation-button"]}
-                  onClick={() => {}}
+                  onClick={() => handleNavigation("left")}
+                  disabled={!canGoBack}
+                  sx={{
+                    opacity: canGoBack ? 1 : 0.5,
+                    pointerEvents: canGoBack ? "auto" : "none",
+                  }}
                 >
                   <ArrowLeftIcon className={styles["navigation-icon"]} />
                 </ButtonBase>
                 <ButtonBase
                   className={styles["navigation-button"]}
-                  onClick={() => {}}
+                  onClick={() => handleNavigation("right")}
+                  disabled={!canGoForward}
+                  sx={{
+                    opacity: canGoForward ? 1 : 0.5,
+                    pointerEvents: canGoForward ? "auto" : "none",
+                  }}
                 >
                   <ArrowRightIcon className={styles["navigation-icon"]} />
                 </ButtonBase>

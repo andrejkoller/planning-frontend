@@ -108,7 +108,7 @@ button.navigation-button {
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 32px;
+  gap: 16px;
 }
 
 .chat-section,
