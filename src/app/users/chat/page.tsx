@@ -8,6 +8,9 @@ export default function Page() {
           <div className={styles["chat-header"]}></div>
           <div className={styles["chat-body"]}>
             {/* Placeholder for chat component */}
+            <div className={styles["chat-placeholder"]}>
+              <p>Chat functionality is under development. Stay tuned!</p>
+            </div>
           </div>
         </div>
       </div>

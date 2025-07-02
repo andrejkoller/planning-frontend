@@ -1,20 +1,113 @@
-.teams-section {
+.users-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.users-section {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.teams-container {
+.users-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.teams-content {
+.users-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.users-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+button.add-user-button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button.add-user-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button.add-user-button:disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+button.add-user-button svg {
+  margin-right: 4px;
+  fill: var(--text-primary);
+  width: 20px;
+  height: 20px;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.users-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  height: 40px;
+  width: fit-content;
+}
+
+.users-tab {
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.users-tab a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
 }

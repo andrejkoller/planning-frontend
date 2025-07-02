@@ -2,7 +2,7 @@
 import {
   CalendarIcon,
   FolderIcon,
-  LayoutGridIcon,
+  HomeIcon,
   MenuIcon,
   MusicIcon,
   SettingsIcon,
@@ -64,7 +64,7 @@ export const Sidebar = ({
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Link href={"/"} style={getActiveStyle("/")}>
-                  <LayoutGridIcon className={styles["icon"]} />
+                  <HomeIcon className={styles["icon"]} />
                   <span className={styles["nav-item-label"]}>Overview</span>
                 </Link>
               </li>
@@ -87,9 +87,9 @@ export const Sidebar = ({
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
-                <Link href={"/music"} style={getActiveStyle("/music")}>
+                <Link href={"/songs"} style={getActiveStyle("/songs")}>
                   <MusicIcon className={styles["icon"]} />
-                  <span className={styles["nav-item-label"]}>Music</span>
+                  <span className={styles["nav-item-label"]}>Songs</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>

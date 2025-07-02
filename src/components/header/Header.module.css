@@ -171,6 +171,11 @@ button.profile-button {
   border-radius: 50%;
   width: 48px;
   height: 48px;
+  transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.profile:hover {
+  transform: scale(1.05);
 }
 
 .profile-logo {

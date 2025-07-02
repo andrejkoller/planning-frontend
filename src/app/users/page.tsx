@@ -8,6 +8,9 @@ export default function Page() {
           <div className={styles["users-header"]}></div>
           <div className={styles["users-body"]}>
             {/* Placeholder for users list or management component */}
+            <div className={styles["users-list"]}>
+              <p>No users available. Please add users to manage your church.</p>
+            </div>
           </div>
         </div>
       </div>
