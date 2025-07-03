@@ -1,26 +1,18 @@
 "use client";
 import styles from "./Header.module.css";
-import { ButtonBase, Divider, Menu, MenuItem } from "@mui/material";
+import { ButtonBase, Menu, MenuItem } from "@mui/material";
 import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  BellIcon,
-  InfoIcon,
-  LanguagesIcon,
-  MenuIcon,
-  MessageSquareIcon,
-  SettingsIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  EllipsisIcon,
+  ExternalLinkIcon,
+  UserPlus2Icon,
 } from "lucide-react";
+import { useNavigationHistory } from "@/hooks/UseNavigationHistory";
 import { useState } from "react";
 import { Theme } from "../theme/Theme";
-import { useNavigationHistory } from "@/hooks/UseNavigationHistory";
 
-type HeaderProps = {
-  isOpen?: boolean;
-  onToggle?: () => void;
-};
-
-export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
+export const Header = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { canGoBack, canGoForward, goBack, goForward } = useNavigationHistory();
   const open = Boolean(anchorEl);
@@ -31,12 +23,6 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const handleMenuToggle = () => {
-    if (toggleSidebar) {
-      toggleSidebar();
-    }
   };
 
   const handleNavigation = (direction: "left" | "right") => {
@@ -52,16 +38,6 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
       <div className={styles["header-container"]}>
         <div className={styles["header-content"]}>
           <div className={styles["left-section"]}>
-            {!isOpen && (
-              <div className={styles["menu-toggle"]}>
-                <ButtonBase
-                  className={styles["menu-button"]}
-                  onClick={handleMenuToggle}
-                >
-                  <MenuIcon className={styles["menu-icon"]} />
-                </ButtonBase>
-              </div>
-            )}
             <div className={styles["navigation-section"]}>
               <div className={styles["navigation-buttons"]}>
                 <ButtonBase
@@ -73,7 +49,7 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     pointerEvents: canGoBack ? "auto" : "none",
                   }}
                 >
-                  <ArrowLeftIcon className={styles["navigation-icon"]} />
+                  <ChevronLeftIcon className={styles["navigation-icon"]} />
                 </ButtonBase>
                 <ButtonBase
                   className={styles["navigation-button"]}
@@ -84,30 +60,24 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     pointerEvents: canGoForward ? "auto" : "none",
                   }}
                 >
-                  <ArrowRightIcon className={styles["navigation-icon"]} />
+                  <ChevronRightIcon className={styles["navigation-icon"]} />
                 </ButtonBase>
               </div>
             </div>
           </div>
           <div className={styles["right-section"]}>
-            <div className={styles["chat-section"]}>
-              <ButtonBase className={styles["chat-button"]}>
-                <MessageSquareIcon className={styles["chat-icon"]} />
+            <div className={styles["invite-section"]}>
+              <ButtonBase className={styles["invite-button"]}>
+                <UserPlus2Icon className={styles["invite-icon"]} />
+                <span className={styles["invite-text"]}>Invite / 1</span>
               </ButtonBase>
             </div>
-            <div className={styles["notifications-section"]}>
-              <ButtonBase className={styles["notifications-button"]}>
-                <BellIcon className={styles["bell-icon"]} />
-              </ButtonBase>
-            </div>
-            <div className={styles["profile-section"]}>
+            <div className={styles["options-section"]}>
               <ButtonBase
-                className={styles["profile-button"]}
+                className={styles["options-button"]}
                 onClick={handleClick}
               >
-                <div className={styles["profile"]}>
-                  <h2 className={styles["profile-logo"]}>AK</h2>
-                </div>
+                <EllipsisIcon className={styles["options-icon"]} />
               </ButtonBase>
               <Menu
                 sx={{
@@ -115,11 +85,11 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     top: "64px !important",
                     left: "auto !important",
                     right: "0 !important",
-                    borderRadius: "16px !important",
-                    padding: "8px !important",
-                    width: "260px !important",
+                    borderRadius: "8px !important",
+                    padding: "4px !important",
+                    minWidth: "196px !important",
                     color: "var(--text-default) !important",
-                    backgroundColor: "var(--bg-menu) !important",
+                    backgroundColor: "var(--bg-main) !important",
                   },
                   "& .MuiList-root": {
                     display: "flex",
@@ -128,60 +98,29 @@ export const Header = ({ isOpen, onToggle: toggleSidebar }: HeaderProps) => {
                     padding: "0 !important",
                   },
                 }}
-                className={styles["profile-menu"]}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                transformOrigin={{
                   vertical: "bottom",
                   horizontal: "right",
                 }}
-                keepMounted
-                open={open}
-                onClose={handleClose}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
               >
-                <div className={styles["profile-menu-header"]}>
-                  <div className={styles["profile-menu-avatar"]}>
-                    <h2 className={styles["profile-menu-logo"]}>AK</h2>
-                  </div>
-                  <span className={styles["profile-menu-name"]}>
-                    Andrej Koller
-                  </span>
-                </div>
-                <Divider
-                  sx={{
-                    "&.MuiDivider-root": {
-                      borderColor: "var(--border-default) !important",
-                    },
-                  }}
-                  className={styles["profile-menu-divider"]}
-                />
-                <MenuItem className={styles["profile-menu-item"]}>
-                  <SettingsIcon className={styles["profile-menu-icon"]} />
-                  Account Settings
+                <MenuItem className={styles["menu-item"]}>
+                  <span className={styles["menu-text"]}>Profile</span>
                 </MenuItem>
-                <MenuItem className={styles["profile-menu-item"]}>
-                  <LanguagesIcon className={styles["profile-menu-icon"]} />
-                  Language
+                <MenuItem className={styles["menu-item"]}>
+                  <span className={styles["menu-text"]}>Support</span>
+                  <ExternalLinkIcon className={styles["menu-icon"]} />
                 </MenuItem>
-                <MenuItem className={styles["profile-menu-item"]}>
+                <MenuItem className={styles["menu-item"]}>
                   <Theme />
                 </MenuItem>
-                <MenuItem className={styles["profile-menu-item"]}>
-                  <InfoIcon className={styles["profile-menu-icon"]} />
-                  About
-                </MenuItem>
-                <MenuItem
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: "var(--alert-error-bg) !important",
-                    },
-                  }}
-                  className={styles["profile-menu-item"]}
-                >
-                  Logout
-                </MenuItem>
+                <MenuItem className={styles["menu-item"]}>Logout</MenuItem>
               </Menu>
             </div>
           </div>

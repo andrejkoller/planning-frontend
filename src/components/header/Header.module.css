@@ -89,8 +89,6 @@ button.navigation-button {
   padding: 10px;
   border-radius: 50%;
   background-color: var(--bg-main);
-  height: 40px;
-  width: 40px;
 }
 
 .navigation-button:hover {
@@ -98,8 +96,8 @@ button.navigation-button {
 }
 
 .navigation-button svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: var(--text-default);
 }
 
@@ -108,137 +106,69 @@ button.navigation-button {
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 16px;
+  gap: 32px;
 }
 
-.chat-section,
-.notifications-section {
+.invite-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-button.chat-button,
-button.notifications-button {
+button.invite-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  gap: 8px;
+  color: var(--text-default);
   cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: var(--bg-main);
-  height: 40px;
-  width: 40px;
 }
 
-.chat-icon,
-.bell-icon {
-  width: 20px;
-  height: 20px;
+button.invite-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+button.invite-button span {
+  font-size: 14px;
+  font-family: var(--font-inter);
   color: var(--text-default);
 }
 
-button.chat-button:hover,
-button.notifications-button:hover {
-  background-color: var(--link-hover-bg);
-}
-
-.profile-section {
+.options-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
-button.profile-button {
+button.options-button {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
-  gap: 8px;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  transition: 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+.options-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-default);
 }
 
-.profile:hover {
-  transform: scale(1.05);
-}
-
-.profile-logo {
-  font-size: 18px;
-  color: #ffffff;
-  margin: 0;
-}
-
-.profile-menu {
-  position: absolute;
-  right: 20px !important;
-}
-
-.profile-menu-item {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding: 4px 8px 4px 12px;
-  box-sizing: border-box;
-  border-radius: 10px !important;
+.menu-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 8px 12px 12px !important;
+  color: var(--text-default);
   font-size: 14px !important;
-  font-weight: 600 !important;
+  font-family: var(--font-inter) !important;
+  border-radius: 4px !important;
+  background-color: var(--bg-main) !important;
+  width: 100% !important;
 }
 
-.profile-menu-item svg {
-  width: 20px;
-  height: 20px;
-  color: var(--text-default);
-  margin-right: 8px;
-}
-
-.profile-menu-item:hover {
+.menu-item:hover {
   background-color: var(--link-hover-bg) !important;
-}
-
-.profile-menu-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  margin: 12px 0;
-  width: 100%;
-}
-
-.profile-menu-header span {
-  font-size: 14px;
-  color: var(--text-default);
-}
-
-.profile-menu-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.profile-menu-logo {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ffffff;
 }

@@ -7,15 +7,27 @@
   height: 100%;
 }
 
-.theme-icon {
+button.theme-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
 }
 
-.theme-icon svg {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+.theme-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 12px 8px 12px 12px !important;
+  color: var(--text-default);
+  font-size: 14px !important;
+  font-family: var(--font-inter) !important;
+  border-radius: 4px !important;
+  gap: 8px !important;
+  background-color: var(--bg-main) !important;
+  width: 100% !important;
+}
+
+.theme-item:hover {
+  background-color: var(--link-hover-bg) !important;
 }

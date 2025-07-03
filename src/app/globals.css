@@ -4,22 +4,17 @@
 }
 
 [data-theme="light"] {
-  /* === App Colors === */
-  --color-app: #56cfe1;
-  --color-app-hover: #3abbd3;
-  --color-app-active: #2aaac1;
-
   /* === Primary Colors === */
-  --color-primary: #5a6ee6;
-  --color-primary-hover: #3e52cc;
-  --color-primary-active: #2c3aa6;
+  --color-primary: #766ce6;
+  --color-primary-hover: #5a52cc;
+  --color-primary-active: #3c3aa6;
 
   /* === Backgrounds === */
-  --bg-main: #f2f9ff;
+  --bg-main: #f8f9fa;
   --bg-secondary: #ffffff;
-  --bg-hover: #f6f8fa;
-  --bg-menu: #ffffff;
-  --bg-link-active: var(--bg-menu);
+  --bg-hover: #f0f0f0;
+  --bg-menu: #f0ecff;
+  --bg-link-active: #e1dbff;
 
   /* === Text / Foreground === */
   --text-default: #1a1a1a;
@@ -28,10 +23,10 @@
   --text-inactive: #6b6b6b;
 
   /* === Links === */
-  --link-hover-bg: #e0f0ff;
+  --link-hover-bg: var(--bg-link-active);
 
   /* === Borders === */
-  --border-default: #dbedff;
+  --border-default: #d0d4db;
 
   /* === Cards === */
   --card-bg: var(--bg-secondary);
@@ -42,8 +37,8 @@
   --card-shadow-hover: rgba(0, 0, 0, 0.08);
 
   /* === Buttons === */
-  --btn-bg: var(--bg-menu);
-  --btn-bg-hover: var(--bg-secondary);
+  --btn-bg: var(--bg-secondary); /* Weiß im Default */
+  --btn-bg-hover: var(--bg-hover); /* sanftes Hover */
   --btn-text: var(--text-default);
   --btn-text-hover: var(--text-default);
   --btn-border: #d0d4db;
@@ -114,75 +109,70 @@
 }
 
 [data-theme="dark"] {
-  /* === App Colors === */
-  --color-app: #56cfe1;
-  --color-app-hover: #3abbd3;
-  --color-app-active: #2aaac1;
-
   /* === Primary Colors === */
-  --color-primary: #5a6ee6;
-  --color-primary-hover: #3e52cc;
-  --color-primary-active: #2c3aa6;
+  --color-primary: #766ce6;
+  --color-primary-hover: #5a52cc;
+  --color-primary-active: #3c3aa6;
 
   /* === Backgrounds === */
   --bg-main: #1c1c1c;
   --bg-secondary: #121212;
-  --bg-hover: var(--bg-secondary);
-  --bg-menu: #292929;
-  --bg-link-active: var(--bg-menu);
+  --bg-hover: #2a2a2a;
+  --bg-menu: #292735;
+  --bg-link-active: #352f4a;
 
   /* === Text / Foreground === */
   --text-default: #ffffff;
-  --text-muted: #b3b3b3;
+  --text-muted: #b3a9cc;
   --text-active: var(--text-default);
-  --text-inactive: var(--text-muted);
+  --text-inactive: #a8a8a8;
 
   /* === Links === */
-  --link-hover-bg: #3a3a3a;
+  --link-hover-bg: #3a3550;
 
   /* === Borders === */
-  --border-default: #3a3a3a;
+  --border-default: #2e2e2e;
 
   /* === Cards === */
   --card-bg: var(--bg-secondary);
   --card-bg-hover: var(--bg-menu);
-  --card-border: var(--bg-menu);
-  --card-border-hover: var(--text-muted);
-  --card-shadow: rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: rgba(0, 0, 0, 0.1);
+  --card-border: #2e2c3a;
+  --card-border-hover: #4a4261;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: rgba(0, 0, 0, 0.15);
 
   /* === Buttons === */
   --btn-bg: var(--bg-menu);
-  --btn-bg-hover: var(--bg-secondary);
+  --btn-bg-hover: #39304e;
   --btn-text: var(--text-default);
   --btn-text-hover: var(--text-default);
-  --btn-border: var(--bg-menu);
-  --btn-border-hover: var(--text-muted);
-  --btn-shadow: rgba(255, 255, 255, 0.05);
-  --btn-shadow-hover: rgba(255, 255, 255, 0.1);
+  --btn-border: #3a3550;
+  --btn-border-hover: #5b4c86;
+  --btn-shadow: rgba(118, 108, 230, 0.1);
+  --btn-shadow-hover: rgba(118, 108, 230, 0.2);
 
   /* === Inputs === */
   --input-bg: var(--bg-secondary);
-  --input-border: var(--bg-menu);
+  --input-border: #3a3550;
   --input-text: var(--text-default);
   --input-placeholder: var(--text-muted);
 
-  --input-focus-bg: var(--bg-menu);
-  --input-focus-border: var(--text-muted);
+  --input-focus-bg: #2b2740;
+  --input-focus-border: #766ce6;
   --input-focus-text: var(--text-default);
-  --input-focus-placeholder: var(--text-muted);
-  --input-focus-shadow: rgba(255, 255, 255, 0.1);
+  --input-focus-placeholder: #c3b6e0;
+  --input-focus-shadow: rgba(118, 108, 230, 0.2);
 
   --input-hover-bg: var(--bg-hover);
-  --input-hover-border: var(--text-muted);
+  --input-hover-border: #5c5180;
   --input-hover-text: var(--text-default);
   --input-hover-placeholder: var(--text-muted);
-  --input-hover-shadow: rgba(255, 255, 255, 0.05);
+  --input-hover-shadow: rgba(118, 108, 230, 0.1);
 
-  --input-disabled-bg: var(--bg-secondary);
-  --input-disabled-border: var(--bg-menu);
-  --input-disabled-text: var(--text-muted);
-  --input-disabled-placeholder: var(--text-muted);
+  --input-disabled-bg: #1a1a1a;
+  --input-disabled-border: #2e2e2e;
+  --input-disabled-text: #888888;
+  --input-disabled-placeholder: #666666;
   --input-disabled-shadow: rgba(0, 0, 0, 0.05);
 
   /* === Alerts / Status === */
@@ -191,36 +181,36 @@
   --alert-error-border: #b85a54;
   --alert-error-icon: #e06666;
 
-  --input-error-border: var(--bg-menu);
+  --input-error-border: #b85a54;
   --input-error-shadow: rgba(224, 102, 102, 0.2);
-  --input-error-placeholder: var(--text-muted);
+  --input-error-placeholder: #f1b0b0;
 
   --alert-success-bg: #1b2c21;
   --alert-success-text: #81c784;
   --alert-success-border: #4caf50;
   --alert-success-icon: #27ae60;
 
-  --input-success-border: var(--bg-menu);
+  --input-success-border: #4caf50;
   --input-success-shadow: rgba(39, 174, 96, 0.2);
-  --input-success-placeholder: var(--text-muted);
+  --input-success-placeholder: #a5f2c7;
 
   --alert-warning-bg: #2c241b;
   --alert-warning-text: #ffdd99;
   --alert-warning-border: #f1c40f;
   --alert-warning-icon: #f39c12;
 
-  --input-warning-border: var(--bg-menu);
+  --input-warning-border: #f39c12;
   --input-warning-shadow: rgba(243, 156, 18, 0.2);
-  --input-warning-placeholder: var(--text-muted);
+  --input-warning-placeholder: #ffe0b2;
 
   --alert-info-bg: #1b2630;
   --alert-info-text: #90caf9;
   --alert-info-border: #3498db;
   --alert-info-icon: #3498db;
 
-  --input-info-border: var(--bg-menu);
+  --input-info-border: #3498db;
   --input-info-shadow: rgba(41, 128, 185, 0.2);
-  --input-info-placeholder: var(--text-muted);
+  --input-info-placeholder: #bbdefb;
 }
 
 body {
