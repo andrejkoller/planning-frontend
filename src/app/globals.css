@@ -10,23 +10,23 @@
   --color-primary-active: #3c3aa6;
 
   /* === Backgrounds === */
-  --bg-main: #f8f9fa;
+  --bg-main: #f2f9ff;
   --bg-secondary: #ffffff;
-  --bg-hover: #f0f0f0;
-  --bg-menu: #f0ecff;
-  --bg-link-active: #e1dbff;
+  --bg-hover: #f0f4f8;
+  --bg-menu: var(--bg-main);
+  --bg-link-active: #e8eaf6;
 
   /* === Text / Foreground === */
   --text-default: #1a1a1a;
-  --text-muted: #4a4a4a;
+  --text-muted: #6b6b6b;
   --text-active: var(--text-default);
-  --text-inactive: #6b6b6b;
+  --text-inactive: #7a7a7a;
 
   /* === Links === */
-  --link-hover-bg: var(--bg-link-active);
+  --link-hover-bg: #e0f0ff;
 
   /* === Borders === */
-  --border-default: #d0d4db;
+  --border-default: #dbedff;
 
   /* === Cards === */
   --card-bg: var(--bg-secondary);
@@ -37,8 +37,8 @@
   --card-shadow-hover: rgba(0, 0, 0, 0.08);
 
   /* === Buttons === */
-  --btn-bg: var(--bg-secondary); /* Weiß im Default */
-  --btn-bg-hover: var(--bg-hover); /* sanftes Hover */
+  --btn-bg: var(--bg-secondary);
+  --btn-bg-hover: var(--bg-hover);
   --btn-text: var(--text-default);
   --btn-text-hover: var(--text-default);
   --btn-border: #d0d4db;
@@ -118,28 +118,29 @@
   --bg-main: #1c1c1c;
   --bg-secondary: #121212;
   --bg-hover: #2a2a2a;
-  --bg-menu: #292735;
-  --bg-link-active: #352f4a;
+  --bg-menu: var(--bg-main);
+  --bg-link-active: #2b2740;
 
   /* === Text / Foreground === */
   --text-default: #ffffff;
-  --text-muted: #b3a9cc;
+  --text-muted: #a8a8a8;
   --text-active: var(--text-default);
-  --text-inactive: #a8a8a8;
+  --text-inactive: #888888;
 
   /* === Links === */
-  --link-hover-bg: #3a3550;
+  --link-hover-bg: var(--bg-secondary);
 
   /* === Borders === */
-  --border-default: #2e2e2e;
+  --border-default: #292929;
 
   /* === Cards === */
-  --card-bg: var(--bg-secondary);
-  --card-bg-hover: var(--bg-menu);
-  --card-border: #2e2c3a;
-  --card-border-hover: #4a4261;
-  --card-shadow: rgba(0, 0, 0, 0.08);
-  --card-shadow-hover: rgba(0, 0, 0, 0.15);
+  --card: var(--bg-secondary);
+  --card-background: var(--bg-secondary);
+  --card-background-hover: var(--bg-menu);
+  --card-border: var(--bg-menu);
+  --card-border-hover: var(--bg-hover);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: rgba(0, 0, 0, 0.1);
 
   /* === Buttons === */
   --btn-bg: var(--bg-menu);
@@ -221,7 +222,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   font-size: 16px;
-  font-weight: 600;
   height: 100%;
   width: 100%;
   margin: 0;

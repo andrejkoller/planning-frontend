@@ -96,8 +96,8 @@ button.navigation-button {
 }
 
 .navigation-button svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: var(--text-default);
 }
 
@@ -109,66 +109,110 @@ button.navigation-button {
   gap: 32px;
 }
 
-.invite-section {
+.profile-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-button.invite-button {
+button.profile-button {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--text-default);
-  cursor: pointer;
-}
-
-button.invite-button svg {
-  width: 24px;
-  height: 24px;
-}
-
-button.invite-button span {
-  font-size: 14px;
-  font-family: var(--font-inter);
-  color: var(--text-default);
-}
-
-.options-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button.options-button {
-  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
+  gap: 8px;
 }
 
-.options-icon {
-  width: 24px;
-  height: 24px;
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.profile-logo {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile-menu {
+  position: absolute;
+  right: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 4px 8px 4px 12px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+}
+
+.profile-menu-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-default);
+  margin-right: 8px;
+}
+
+.profile-menu-text {
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--text-default);
 }
 
-.menu-item {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 12px 8px 12px 12px !important;
-  color: var(--text-default);
-  font-size: 14px !important;
-  font-family: var(--font-inter) !important;
-  border-radius: 4px !important;
-  background-color: var(--bg-main) !important;
-  width: 100% !important;
-}
-
-.menu-item:hover {
+.profile-menu-item:hover {
   background-color: var(--link-hover-bg) !important;
+}
+
+.profile-menu-item:last-child:hover {
+  background-color: var(--alert-error-bg) !important;
+}
+
+.profile-menu-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.profile-menu-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.profile-menu-logo {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.profile-menu-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-default);
+}
+
+.profile-menu-divider {
+  border-color: var(--border-default) !important;
 }

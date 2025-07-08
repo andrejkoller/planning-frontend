@@ -7,27 +7,21 @@
   height: 100%;
 }
 
-button.theme-button {
+.theme-icon {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
 }
 
-.theme-item {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  padding: 12px 8px 12px 12px !important;
-  color: var(--text-default);
-  font-size: 14px !important;
-  font-family: var(--font-inter) !important;
-  border-radius: 4px !important;
-  gap: 8px !important;
-  background-color: var(--bg-main) !important;
-  width: 100% !important;
+.theme-icon svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 
-.theme-item:hover {
-  background-color: var(--link-hover-bg) !important;
+.theme-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-default);
 }

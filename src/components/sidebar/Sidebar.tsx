@@ -3,15 +3,24 @@ import {
   CalendarIcon,
   FolderIcon,
   LayoutGridIcon,
+  MenuIcon,
   SettingsIcon,
   Users2Icon,
 } from "lucide-react";
 import styles from "./Sidebar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Tooltip } from "@mui/material";
+import { ButtonBase } from "@mui/material";
 
-export const Sidebar = () => {
+type SidebarProps = {
+  isOpen?: boolean;
+  onToggle?: () => void;
+};
+
+export const Sidebar = ({
+  isOpen: sidebarOpen = true,
+  onToggle: toggleSidebar = () => {},
+}: SidebarProps) => {
   const pathname = usePathname();
 
   const getActiveStyle = (path: string) =>
@@ -23,55 +32,68 @@ export const Sidebar = () => {
       : {};
 
   return (
-    <div className={styles["sidebar"]}>
+    <div
+      className={styles["sidebar"]}
+      style={{
+        width: sidebarOpen ? "280px" : "0px",
+        minWidth: sidebarOpen ? "280px" : "0px",
+        overflow: sidebarOpen ? "visible" : "hidden",
+        transition: "width 0.2s ease, min-width 0.2s ease, overflow 0.2s ease",
+        padding: sidebarOpen ? "0 12px" : "0px",
+      }}
+    >
       <div className={styles["sidebar-container"]}>
         <div className={styles["sidebar-content"]}>
+          <div className={styles["logo-section"]}>
+            <div className={styles["logo"]}>
+              <Link href={"/"} className={styles["logo-link"]}>
+                <h1>Planning</h1>
+              </Link>
+            </div>
+            <div className={styles["menu-toggle"]}>
+              <ButtonBase
+                className={styles["menu-button"]}
+                onClick={toggleSidebar}
+                aria-label="Toggle sidebar menu"
+              >
+                <MenuIcon className={styles["menu-icon"]} />
+              </ButtonBase>
+            </div>
+          </div>
           <nav className={styles["nav-section"]}>
             <ul className={styles["nav-list"]}>
               <li className={styles["nav-item"]}>
                 <Link href={"/"} style={getActiveStyle("/")}>
-                  <Tooltip title="Dashboard" placement="right">
-                    <LayoutGridIcon className={styles["icon"]} />
-                  </Tooltip>
+                  <LayoutGridIcon className={styles["icon"]} />
+                  <span className={styles["nav-text"]}>Dashboard</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
                 <Link href={"/calendar"} style={getActiveStyle("/calendar")}>
-                  <Tooltip title="Calendar" placement="right">
-                    <CalendarIcon className={styles["icon"]} />
-                  </Tooltip>
+                  <CalendarIcon className={styles["icon"]} />
+                  <span className={styles["nav-text"]}>Calendar</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
                 <Link href={"/services"} style={getActiveStyle("/services")}>
-                  <Tooltip title="Services" placement="right">
-                    <FolderIcon className={styles["icon"]} />
-                  </Tooltip>
+                  <FolderIcon className={styles["icon"]} />
+                  <span className={styles["nav-text"]}>Services</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
                 <Link href={"/users"} style={getActiveStyle("/users")}>
-                  <Tooltip title="Users" placement="right">
-                    <Users2Icon className={styles["icon"]} />
-                  </Tooltip>
+                  <Users2Icon className={styles["icon"]} />
+                  <span className={styles["nav-text"]}>Users</span>
                 </Link>
               </li>
               <li className={styles["nav-item"]}>
                 <Link href={"/settings"} style={getActiveStyle("/settings")}>
-                  <Tooltip title="Settings" placement="right">
-                    <SettingsIcon className={styles["icon"]} />
-                  </Tooltip>
+                  <SettingsIcon className={styles["icon"]} />
+                  <span className={styles["nav-text"]}>Settings</span>
                 </Link>
               </li>
             </ul>
           </nav>
-          <div className={styles["profile-section"]}>
-            <Link href={"/profile"} className={styles["profile-link"]}>
-              <div className={styles["profile"]}>
-                <h2 className={styles["profile-logo"]}>A</h2>
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
