@@ -2,13 +2,9 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <section className={styles["home-section"]}>
-      <div className={styles["home-container"]}>
-        <div className={styles["home-content"]}>
-          <div className={styles["home-body"]}>
-            <div className={styles["overview"]}></div>
-          </div>
-        </div>
+    <section className={styles["dashboard-section"]}>
+      <div className={styles["dashboard-container"]}>
+        <div className={styles["dashboard-content"]}></div>
       </div>
     </section>
   );

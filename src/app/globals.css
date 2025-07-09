@@ -10,11 +10,10 @@
   --color-primary-active: #3c3aa6;
 
   /* === Backgrounds === */
-  --bg-main: #f2f9ff;
+  --bg-main: #f7f8fa;
   --bg-secondary: #ffffff;
-  --bg-hover: #f0f4f8;
+  --bg-hover: #f0f1f3;
   --bg-menu: var(--bg-main);
-  --bg-link-active: #e8eaf6;
 
   /* === Text / Foreground === */
   --text-default: #1a1a1a;
@@ -26,7 +25,7 @@
   --link-hover-bg: #e0f0ff;
 
   /* === Borders === */
-  --border-default: #dbedff;
+  --border-default: #dedfe0;
 
   /* === Cards === */
   --card-bg: var(--bg-secondary);
@@ -115,11 +114,10 @@
   --color-primary-active: #3c3aa6;
 
   /* === Backgrounds === */
-  --bg-main: #1c1c1c;
+  --bg-main: #1a1a1a;
   --bg-secondary: #121212;
   --bg-hover: #2a2a2a;
   --bg-menu: var(--bg-main);
-  --bg-link-active: #2b2740;
 
   /* === Text / Foreground === */
   --text-default: #ffffff;
@@ -131,7 +129,7 @@
   --link-hover-bg: var(--bg-secondary);
 
   /* === Borders === */
-  --border-default: #292929;
+  --border-default: #2e2e2e;
 
   /* === Cards === */
   --card: var(--bg-secondary);

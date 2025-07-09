@@ -1,15 +1,21 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  position: fixed;
+  top: 0;
   border-right: 1px solid var(--border-default);
   box-sizing: border-box;
-  background-color: var(--bg-menu);
+  background-color: var(--bg-main);
+  height: 100%;
+  width: 5.5rem;
+  min-width: 5.5rem;
 }
 
 .sidebar-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
 }
@@ -20,69 +26,16 @@
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-  width: 100%;
+  padding: 16px 0;
   height: 100%;
-}
-
-.logo-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 64px;
   width: 100%;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--text-default);
-}
-
-.logo h1 {
-  font-size: 20px;
-  color: var(--text-default);
-  margin: 0;
-  padding-left: 8px;
-}
-
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-button.menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 32px;
-  width: 32px;
-  padding: 6px;
-  border-radius: 10px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--text-default);
-}
-
-.menu-button:hover {
-  background-color: var(--link-hover-bg);
 }
 
 .nav-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  margin-top: 20px;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
 }
@@ -112,12 +65,10 @@ button.menu-button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px;
+  padding: 10px;
   color: var(--text-default);
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
-  height: 24px;
-  width: -webkit-fill-available;
 }
 
 .nav-item a:hover {
@@ -126,15 +77,8 @@ button.menu-button {
 }
 
 .nav-item a svg {
-  width: 20px;
-  height: 20px;
-  color: var(--text-default);
-  margin-right: 8px;
-}
-
-.nav-item a span {
-  font-size: 0.875rem;
-  font-weight: 500;
+  width: 24px;
+  height: 24px;
   color: var(--text-default);
 }
 
@@ -142,7 +86,6 @@ button.menu-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -152,6 +95,13 @@ button.menu-button {
   justify-content: center;
   text-decoration: none;
   width: 100%;
+}
+
+.profile-section a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .profile {
@@ -170,7 +120,7 @@ button.menu-button {
   transform: scale(1.05);
 }
 
-.profile-logo {
+.profile-initials {
   font-size: 1.5rem;
   color: #ffffff;
   margin: 0;

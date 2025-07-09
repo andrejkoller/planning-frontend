@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg-secondary);
-  padding: 0 20px;
-  height: 64px;
-  min-height: 64px;
+  padding: 1rem;
+  width: calc(100% - 5.5rem);
   transition: min-height 0.3s;
+  margin-left: auto;
+  box-sizing: border-box;
 }
 
 .header-container {
@@ -25,194 +26,40 @@
 
 .left-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  gap: 16px;
   height: 100%;
 }
 
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-button.menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 32px;
-  width: 32px;
-  padding: 6px;
-  border-radius: 10px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-icon {
-  width: 20px;
-  height: 20px;
+.title {
+  font-size: 3.5rem;
+  font-weight: 500;
   color: var(--text-default);
-}
-
-.menu-button:hover {
-  background-color: var(--link-hover-bg);
-}
-
-.navigation-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.navigation-buttons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
   margin: 0;
-  gap: 8px;
 }
 
-button.navigation-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: var(--bg-main);
-}
-
-.navigation-button:hover {
-  background-color: var(--link-hover-bg);
-}
-
-.navigation-button svg {
-  width: 20px;
-  height: 20px;
-  color: var(--text-default);
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .right-section {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.profile-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button.profile-button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  gap: 8px;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-}
-
-.profile-logo {
-  font-size: 18px;
-  color: #ffffff;
-  margin: 0;
-}
-
-.profile-menu {
-  position: absolute;
-  right: 20px !important;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-
-.profile-menu-item {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding: 4px 8px 4px 12px;
-  box-sizing: border-box;
-  border-radius: 10px !important;
-  font-size: 16px !important;
-}
-
-.profile-menu-icon {
-  width: 20px;
-  height: 20px;
+a.menu-item-label {
   color: var(--text-default);
-  margin-right: 8px;
-}
-
-.profile-menu-text {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-default);
-}
-
-.profile-menu-item:hover {
-  background-color: var(--link-hover-bg) !important;
-}
-
-.profile-menu-item:last-child:hover {
-  background-color: var(--alert-error-bg) !important;
-}
-
-.profile-menu-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  margin: 12px 0;
+  text-decoration: none;
+  font-size: 1rem;
   width: 100%;
-}
-
-.profile-menu-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.profile-menu-logo {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.profile-menu-name {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-default);
-}
-
-.profile-menu-divider {
-  border-color: var(--border-default) !important;
 }

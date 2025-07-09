@@ -1,84 +1,97 @@
 import { ThemeContext } from "@/contexts/theme/ThemeContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "./Theme.module.css";
-import { styled, Switch, SwitchProps } from "@mui/material";
-import { SunIcon, MoonIcon } from "lucide-react";
-
-const IOSSwitch = styled((props: SwitchProps) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
-))(({ theme }) => ({
-  width: 42,
-  height: 26,
-  padding: 0,
-  "& .MuiSwitch-switchBase": {
-    padding: 0,
-    margin: 2,
-    transitionDuration: "300ms",
-    "&.Mui-checked": {
-      transform: "translateX(16px)",
-      color: "#fff",
-      "& + .MuiSwitch-track": {
-        opacity: 1,
-        border: 0,
-        backgroundColor: theme.palette.mode === "dark" ? "#2ECA45" : "#65C466",
-      },
-    },
-    "&.Mui-focusVisible .MuiSwitch-thumb": {
-      color: "#33cf4d",
-      border: "6px solid #fff",
-    },
-    "&.Mui-disabled .MuiSwitch-thumb": {
-      color:
-        theme.palette.mode === "dark"
-          ? theme.palette.grey[600]
-          : theme.palette.grey[100],
-      opacity: theme.palette.mode === "dark" ? 0.3 : 0.7,
-      boxSizing: "border-box",
-      width: 22,
-      height: 22,
-    },
-    "& .MuiSwitch-track": {
-      opacity: 1,
-      borderRadius: 26 / 2,
-      backgroundColor: theme.palette.mode === "dark" ? "#39393D" : "#E9E9EA",
-      transition: theme.transitions.create(["background-color"], {
-        duration: 500,
-      }),
-    },
-  },
-  "& .MuiSwitch-thumb": {
-    boxSizing: "border-box",
-    width: 22,
-    height: 22,
-    backgroundColor: theme.palette.mode === "dark" ? "#fff" : "#fff",
-    transition: theme.transitions.create(["background-color"], {
-      duration: 500,
-    }),
-  },
-}));
+import { SunIcon, MoonIcon, ChevronRightIcon } from "lucide-react";
+import { ButtonBase, Menu, MenuItem } from "@mui/material";
 
 export const Theme = () => {
-  const { theme, setLightTheme, setDarkTheme } = useContext(ThemeContext);
+  const { setLightTheme, setDarkTheme } = useContext(ThemeContext);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [open, setOpen] = useState(false);
 
-  const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      setDarkTheme?.();
-    } else {
+  const handleThemeChange = (theme: string) => {
+    if (theme === "light") {
       setLightTheme?.();
+    } else if (theme === "dark") {
+      setDarkTheme?.();
     }
+    handleMenuClose();
+  };
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+    setOpen(true);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    setOpen(false);
   };
 
   return (
     <div className={styles["theme-container"]}>
-      <div className={styles["theme-icon"]}>
-        {theme === "light" ? (
-          <SunIcon className={styles["theme-icon-sun"]} />
-        ) : (
-          <MoonIcon className={styles["theme-icon-moon"]} />
-        )}
-        <span className={styles["theme-text"]}>Dark Mode</span>
-      </div>
-      <IOSSwitch checked={theme === "dark"} onChange={handleThemeChange} />
+      <ButtonBase
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+        className={styles["theme-button"]}
+        onClick={handleMenuOpen}
+      >
+        <span className={styles["theme-text"]}>Change Theme</span>
+        <ChevronRightIcon className={styles["theme-icon"]} />
+      </ButtonBase>
+      <Menu
+        sx={{
+          "& .MuiPaper-root": {
+            backgroundColor: "var(--bg-menu)",
+            color: "var(--text-default)",
+            width: "12rem",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+            borderRadius: "4px",
+            padding: "4px",
+          },
+          "& .MuiMenu-list": {
+            padding: "0",
+          },
+          "& .MuiMenuItem-root": {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: "0.5rem",
+            padding: "12px 8px 12px 12px",
+            "&:hover": {
+              backgroundColor: "var(--bg-hover)",
+            },
+            "&.MuiList-root": {
+              padding: "0.5rem 1rem",
+            },
+          },
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleMenuClose}
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
+        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        className={styles["theme-menu"]}
+      >
+        <MenuItem
+          className={styles["theme-menu-item"]}
+          onClick={() => handleThemeChange("light")}
+        >
+          <SunIcon className={styles["theme-icon"]} />
+          <span className={styles["theme-label"]}>Light Theme</span>
+        </MenuItem>
+        <MenuItem
+          className={styles["theme-menu-item"]}
+          onClick={() => handleThemeChange("dark")}
+        >
+          <MoonIcon className={styles["theme-icon"]} />
+          <span className={styles["theme-label"]}>Dark Theme</span>
+        </MenuItem>
+      </Menu>
     </div>
   );
 };

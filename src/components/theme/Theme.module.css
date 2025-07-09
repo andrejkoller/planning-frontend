@@ -7,13 +7,6 @@
   height: 100%;
 }
 
-.theme-icon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-
 .theme-icon svg {
   width: 20px;
   height: 20px;
